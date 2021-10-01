@@ -21,7 +21,7 @@ const newLocal='Menuppal'
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
              <a class="nav-link active" href="#">
-                    <router-link  to="/Inmicio" class="nav-item nav-link">
+                    <router-link  to="/Inicio" class="nav-item nav-link">
              
                Inicio
             
@@ -69,9 +69,27 @@ const newLocal='Menuppal'
 
             <li class="nav-item">
             <a class="nav-link active" href="#">
-                    <router-link  to="/Productos" class="nav-item nav-link">
+                    <router-link  to="/Carrito" class="nav-item nav-link">
              
                Carrito
+            
+                </router-link>
+                </a>
+            </li>
+
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar.."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+            <li class="nav-item">
+            <a class="nav-link active" href="#">
+                    <router-link  to="/Carrito" class="nav-item nav-link">
+
+               Compras
             
                 </router-link>
                 </a>
@@ -85,7 +103,7 @@ const newLocal='Menuppal'
               placeholder="Buscar.."
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success" type="submit">              
               Buscar
             </button>
           </form>
