@@ -275,6 +275,7 @@ export default {
           ID.value=datos.data._id;
           this.flashMessage.info({title: ' Usuarios', message: 'Usuarios consultado con éxito'});
         } catch (error) {
+           this.flashMessage.error({title: ' Usuarios', message: 'Usuario No existe' || error });
           console.log(error);
         }
       }
@@ -314,16 +315,13 @@ export default {
       //let resultadoElemento =document.getElementById("getResult");
       //resultadoElemento.innerHTML="";
 
-      const filtro = document.getElementById("inpID");
+      const filtro = document.getElementById("inpID").value;
            
      // const desadi = document.getElementById("inpDesadi"); 
-      const Borrarusuario = {
-        _id :filtro.value ,
-     
-      };
-      console.log(Borrarusuario);
+    
+      console.log(filtro);
       try {
-      let datos=await axios.delete('http://localhost:4000/api/usuario',Borrarusuario);
+      let datos=await axios.delete(`http://localhost:4000/api/usuario/${filtro}`);
       this.flashMessage.info({title: 'Borrado Usuarios', message: 'Usuarios Borrado con éxito'});
         console.log(datos);
       //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
