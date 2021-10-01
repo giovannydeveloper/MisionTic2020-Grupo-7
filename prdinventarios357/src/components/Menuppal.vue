@@ -87,7 +87,7 @@ const newLocal='Menuppal'
             <button class="btn btn-outline-success" type="submit">
             <li class="nav-item">
             <a class="nav-link active" href="#">
-                    <router-link  to="/Carrito" class="nav-item nav-link">
+                    <router-link  to="/Compras" class="nav-item nav-link">
 
                Compras
             
