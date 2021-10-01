@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "devbabel": "nodemon main.js --exec babel-node"
   },
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
@@ -22,6 +23,10 @@
     "vue-axios": "^3.3.7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
