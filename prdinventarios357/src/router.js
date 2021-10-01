@@ -5,7 +5,7 @@ import Router from "vue-router";
 import Inicial from './components/Inicial.vue';
 import Categorias from './components/Categorias.vue';
 import Usuarios from './components/Usuarios.vue';
-import Productos from './components/Productos.vue';
+//import Productos from './components/Productos.vue';
 
 
 Vue.use(Router)
@@ -27,12 +27,13 @@ export default new Router({
                     component: Categorias
                 },
                    
+        /*           
               {
                     path: "/Productos",
                     name: "Productos",
                     component: Productos
                 },
-             /*
+            
                 {
                     path: "/Bodegas",
                     name: "Bodegas",
