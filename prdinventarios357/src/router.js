@@ -6,6 +6,7 @@ import Inicial from './components/Inicial.vue';
 import Categorias from './components/Categorias.vue';
 import Usuarios from './components/Usuarios.vue';
 //import Productos from './components/Productos.vue';
+import Carrito from './components/Carrito.vue';
 
 
 Vue.use(Router)
@@ -54,11 +55,12 @@ export default new Router({
                     name: "Compras",
                     component: Compras
                 },
+                */
                 {
                     path: "/Carrito",
                     name: "Carrito",
                     component: Carrito
-                }*/
+                }
             ]
 
             })
