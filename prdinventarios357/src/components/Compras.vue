@@ -1,0 +1,174 @@
+const newLocal='Compras'
+<template>
+  <div>
+      <div class="container">
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <section class="bg-light pb-5 pt-5">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+                <div class="container-fluid"> 
+                    <a class="navbar-brand" href="#">SIG735</a> 
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler42" aria-controls="" aria-expanded="false" aria-label="Toggle navigation"> 
+                        <span class="navbar-toggler-icon"></span> 
+                    </button>                     
+                    <div class="collapse navbar-collapse" id="navbarToggler42"> 
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Inicio</a> 
+                            </li>                             
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Usuarios</a> 
+                            </li>                             
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Categorias</a> 
+                            </li>                             
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Productos</a> 
+                            </li>                             
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Compras</a> 
+                            </li>                             
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Ventas</a> 
+                            </li>                             
+                            <li class="nav-item"> 
+                                <a class="nav-link active" href="#">Carrito</a> 
+                            </li>                             
+                        </ul>                         
+                        <form class="d-flex"> 
+                            <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search"> 
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>                             
+                        </form>                         
+                    </div>                     
+                </div>                 
+            </nav>
+            <div class="container pb-5 pt-5"> 
+                <form> 
+                    <div class="row"> 
+                        <div class="mb-3 col-md-3"> 
+                            <label class="form-label" for="inputLastName">Fecha</label>                             
+                            <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder=""> 
+                        </div>
+                        <div class="mb-3 col-md-6"> 
+                            <label class="form-label" for="inputLastName">Condición Pago</label>                             
+                            <select id="formInput4" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0"> 
+                                <option disabled selected>Contado</option>
+                                <option>Option 1</option>                                 
+                                <option>Option 2</option>                                 
+                                <option>Option 3</option>                                 
+                            </select>                             
+                        </div> 
+                           <div class="mb-3 col-md-2"> 
+                               <div>
+                            <label class="form-label" for="inputLastName">Doc Proveedor</label>  
+                             <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder="">   
+                                    </div>
+                             
+                                           
+                                                    
+                        </div>                         
+                    </div>                     
+                    <div class="mb-3 col-md-6"> 
+                        <label class="form-label" for="inputLastName">Tipo Documento</label>                         
+                        <select id="formInput4" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0"> 
+                            <option disabled selected>Contado</option>
+                            <option>Option 1</option>                             
+                            <option>Option 2</option>                             
+                            <option>Option 3</option>                             
+                        </select>                         
+                    </div>                     
+                    <div class="mb-3 col-md-9"> 
+                        <label class="form-label" for="inputLastName">Bodega</label>                         
+                        <select id="formInput4" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0"> 
+                            <option disabled selected>Contado</option>
+                            <option>Option 1</option>                             
+                            <option>Option 2</option>                             
+                            <option>Option 3</option>                             
+                        </select>                         
+                    </div>                     
+                    <div class="mb-3 col-md-9"> 
+                        <label class="form-label" for="inputLastName">Proveedor</label>                         
+                        <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder=""> 
+                    </div>
+                    <div class="row"> 
+                        <div class="col-md-3 mb-3"> 
+                            <label class="form-label" for="inputLastName">Codigo</label>                             
+                            <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder=""> 
+                        </div>
+                        <div class="col-md-2 "> 
+                            <label class="form-label" for="inputLastName">Cantidad</label>                             
+                            <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder="">
+                        </div>
+                        <div class="col-md-2 "> 
+                            <label class="form-label" for="inputLastName">Costo und</label>                             
+                            <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder=""> 
+                        </div>                         
+                        <div class="col-md-2"> 
+                            <label class="form-label" for="inputLastName">% Descuento</label>                             
+                            <input type="text" class="bg-light border-start-0 border-end-0 border-top-0 form-control ps-0 pe-0 rounded-0" id="iptfecha" placeholder=""> 
+                        </div>                         
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary ps-4 pe-4 rounded-0 rounded-pill text-uppercase">
+                                <span class="align-middle">Adicionar</span>
+                                <svg viewBox="0 0 24 24" fill="currentColor" height="16" width="16" class="ms-1"> 
+                                    <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>                                     
+                                </svg>
+                            </button>
+                        </div>                         
+                    </div>                     
+                    <div class="row">
+                        <div class="col-md-10">
+                            <table class="table"> 
+                                <thead> 
+                                    <tr> 
+                                        <th scope="col">#</th> 
+                                        <th scope="col">codigo</th> 
+                                        <th scope="col">descripcion</th> 
+                                        <th scope="col">cantidad</th> 
+                                        <th scope="col">Costo</th> 
+                                        <th scope="col">% Iva</th> 
+                                        <th scope="col">Subtotal</th> 
+                                    </tr>                                     
+                                </thead>                                 
+                                <tbody> 
+                                    <tr> 
+                                        <th scope="row">1</th> 
+                                        <td>alimento</td> 
+                                        <td>Alimento procesado</td> 
+                                        <td>1</td> 
+                                        <td>75000</td> 
+                                        <td>0</td> 
+                                        <td>75000</td> 
+                                    </tr>                                     
+                                    <tr> 
+                                        <th scope="row">1</th> 
+                                        <td>insumo</td> 
+                                        <td>insumo procesado</td> 
+                                        <td>10</td> 
+                                        <td>15000</td> 
+                                        <td>0</td> 
+                                        <td>150000</td> 
+                                    </tr>                                     
+                                </tbody>                                 
+                            </table>
+                        </div>
+                    </div>                     
+                    <div class=" mb-3"> 
+                        <input type="checkbox" class="form-check-input" id="formInput57"> 
+                        <label class="form-check-label" for="formInput57">Imprimir</label>                         
+                    </div>                     
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary ps-4 pe-4 rounded-0 rounded-pill text-uppercase">
+                            <span class="align-middle">Guardar</span>
+                            <svg viewBox="0 0 24 24" fill="currentColor" height="16" width="16" class="ms-1"> 
+                                <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>                                 
+                            </svg>
+                        </button>
+                    </div>                     
+                </form>                 
+            </div>             
+        </section>
+    </div> 
+</template>
