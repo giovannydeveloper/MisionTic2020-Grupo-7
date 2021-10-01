@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Usuario = require('../models/usuario');
 
-// Crear
+// Crear usuario
 router.post ('/usuario-nuevo', async (req, res ) =>{
      const body = req.body;
      try {
@@ -21,11 +21,11 @@ router.post ('/usuario-nuevo', async (req, res ) =>{
 
 });
 
-// Get con parámetros
-router.get('/usuario/:id', async(req, res) => {
-    const _id = req.params.id;
+// Get con parámetros usuario
+router.get('/usuario/:codigo', async(req, res) => {
+    const codigo = req.params.codigo;
     try {
-    const usuairobd = await Usuario.findOne({_id});
+    const usuairobd = await Usuario.findOne({codigo});
     res.json(usuairobd);
     } catch (err) {
     return res.status(400).json({
@@ -34,7 +34,7 @@ router.get('/usuario/:id', async(req, res) => {
     })
     }
 });
-// Get con todos los documentos
+// Get con todos los usuario
 router.get('/usuarios', async (req, res) => {
     try {
         const usuairobd = await Usuario.find();
@@ -48,13 +48,13 @@ router.get('/usuarios', async (req, res) => {
 });
    
 
-   // Delete eliminar una nota
+   // Delete eliminar un usuario
    router.delete('/usuario/:id', async (req, res) => {
        const _id = req.params.id;
        try {
            const usuairobd = await Usuario.findByIdAndDelete({
-               _id
-           });
+            _id
+           }); 
            if (!usuairobd) {
                return res.status(400).json({
                         mensaje: err.message || 'No se encontró el id indicado',
@@ -69,7 +69,7 @@ router.get('/usuarios', async (req, res) => {
            })
        }
    });
-   // Put actualizar una nota
+   // Put actualizar un usuario
    router.put('/usuario/:id', async (req, res) => {
        const _id = req.params.id;
        const body = req.body;
