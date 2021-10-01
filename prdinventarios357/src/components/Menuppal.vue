@@ -68,7 +68,13 @@ const newLocal='Menuppal'
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="#">Carrito</a>
+            <a class="nav-link active" href="#">
+                    <router-link  to="/Productos" class="nav-item nav-link">
+             
+               Carrito
+            
+                </router-link>
+                </a>
             </li>
           </ul>
 
