@@ -70,14 +70,15 @@ router.get('/usuarios', async (req, res) => {
        }
    });
    // Put actualizar un usuario
-   router.put('/usuario/:id', async (req, res) => {
-       const _id = req.params.id;
-       const body = req.body;
+   router.put('/usuario_actualizar', async (req, res) => {
+       const _id = req.body.id;
+       const body = req.body; 
+       console.log(_id);
        try {
-           const usuarioDb = await Usuario.findByIdAndUpdate(
+           const usuairobd  = await Usuario.findByIdAndUpdate(
                _id,
                body, {
-                   new: true
+                   new: true 
                });
            res.json(usuairobd);
        } catch (err) {

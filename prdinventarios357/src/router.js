@@ -7,12 +7,18 @@ import Categorias from './components/Categorias.vue';
 import Usuarios from './components/Usuarios.vue';
 import Productos from './components/Productos.vue';
 import Carrito from './components/Carrito.vue';
-
+import Login from './components/Login.vue';
 
 Vue.use(Router)
 
 export default new Router({
-            routes: [{
+            routes: [
+                {
+                    path: "/Login",
+                    name: "Login",
+                    component: Login
+                },
+                {
                     path: "/Inicial",
                     name: "Inicial",
                     component: Inicial

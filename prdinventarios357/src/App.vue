@@ -13,18 +13,26 @@
           src="https://3.bp.blogspot.com/-6E7PzezxRqY/XLKkVVFl7fI/AAAAAAAAAME/53_d_kuXRfcnR1HrP7sNNrphlT_xaH2wQCK4BGAYYCw/s1600/grupo7%2B%25282%2529.png"
         />
       </div>
-
+     
+     
       <Menuppal />
+        
     </div>
     <hr />
+      <main>
     <div class="row">
+     
       <FlashMessage></FlashMessage>
+       <router-view></router-view>
       <div>
-        <router-view></router-view>
+     
       </div>
     </div>
+     </main>
     <hr />
     <blockquote class="blockquote mb-0">
+    
+    
       <footer class="container-fluid text-center">
         <div class="blockquote-footer navbar-inverse navbar-fixed-bottom">
           <Piepagina />
@@ -38,13 +46,17 @@
 <script>
 import Menuppal from "./components/Menuppal.vue";
 import Piepagina from "./components/Piepagina.vue";
+//import Login from "./components/Login.vue";
 
 export default {
   name: "App",
   components: {
-    Menuppal,
+  Menuppal,
     Piepagina,
+
+  //  Login,
   },
+
 };
 </script>
 

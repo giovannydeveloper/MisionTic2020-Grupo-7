@@ -7,8 +7,7 @@ const newLocal='Usuarios'
         <form>
           <div class="row">
             <div class="input-group input-group-sm mb-2">
-                 
-                  <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
               <input
                 type="text"
                 class="
@@ -17,15 +16,17 @@ const newLocal='Usuarios'
                   form-control
                   ps-0
                   pe-0
-                  rounded-0               
-                "                
+                  rounded-0
+                "
                 id="inpID"
-                      />
-              </div>
+              />
+            </div>
           </div>
           <div class="row">
             <div class="mb-3 col-md-12">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Código</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Código</span
+              >
               <input
                 type="text"
                 class="
@@ -39,10 +40,9 @@ const newLocal='Usuarios'
                 id="inpCodigo"
                 placeholder="Ingrese Código"
               />
-             
             </div>
-            </div>
-              <div class="row">
+          </div>
+          <div class="row">
             <div class="mb-2 col-md-8">
               <button
                 type="submit"
@@ -73,8 +73,9 @@ const newLocal='Usuarios'
           </div>
           <div class="row">
             <div class="mb-3 col-md-12">
-              
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Nombres</span
+              >
               <input
                 type="text"
                 class="
@@ -89,12 +90,13 @@ const newLocal='Usuarios'
                 placeholder="Ingrese apellidos completos..."
               />
             </div>
-        
           </div>
 
           <div class="row">
             <div class="mb-3 col-md-6">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Email</span
+              >
               <input
                 type="email"
                 class="
@@ -110,7 +112,9 @@ const newLocal='Usuarios'
               />
             </div>
             <div class="col-md-6 mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Clave</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Clave</span
+              >
               <input
                 type="text"
                 class="
@@ -127,8 +131,9 @@ const newLocal='Usuarios'
             </div>
           </div>
           <div class="mb-3">
-            
-             <span class="input-group-text" id="inputGroup-sizing-sm">Descripción Adicional</span>
+            <span class="input-group-text" id="inputGroup-sizing-sm"
+              >Descripción Adicional</span
+            >
             <textarea
               class="
                 bg-light
@@ -143,91 +148,90 @@ const newLocal='Usuarios'
               placeholder=""
             ></textarea>
           </div>
-          <div class="d-grid gap-2 d-md-block ">
-            <button
-              type="submit"
-              class="
-                btn btn-primary
-                ps-4
-                pe-4
-                rounded-0 rounded-pill
-                text-uppercase
-                
-              "
-               @click="PostUsuario()"
-            >
-              <span class="align-middle  ">Crear</span>
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="16"
-                width="16"
-                class="ms-1"
-                
+          <div class="form-group row">
+            <div class="col-md-4">
+              <button
+                type="submit"
+                class="
+                  btn btn-primary
+                  ps-6
+                  pe-6
+                  rounded-0 rounded-pill
+                  text-uppercase
+                "
+                @click="PostUsuario()"
               >
-                <path
-                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                ></path>
-              </svg>
-            </button>
-            <button
-              type="submit"
-              class="
-                btn btn-primary
-                ps-6
-                pe-6
-                rounded-0 rounded-pill
-                text-uppercase
-                
-                
-              "
-               @click="PutUsuario()"
-            >
-              <span class="align-middle ">Guardar</span>
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="16"
-                width="16"
-                class="ms-1"
+                <span class="align-middle">Crear</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  height="16"
+                  width="16"
+                  class="ms-1"
+                >
+                  <path
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button
+                type="submit"
+                class="
+                  btn btn-primary
+                  ps-6
+                  pe-6
+                  rounded-0 rounded-pill
+                  text-uppercase
+                "
+                @click="PutUsuario()"
               >
-                <path
-                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button
-              type="submit"
-              class="
-                btn btn-primary
-                ps-4
-                pe-4
-                rounded-0 rounded-pill
-                text-uppercase
-              "
-               @click="DelUsuario()"
-            >
-              <span class="align-middle">Eliminar</span>
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="16"
-                width="16"
-                class="ms-1"
+                <span class="align-middle">Actualizar</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  height="16"
+                  width="16"
+                  class="ms-1"
+                >
+                  <path
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button
+                type="submit"
+                class="
+                  btn btn-primary
+                  ps-6
+                  pe-6
+                  rounded-0 rounded-pill
+                  text-uppercase
+                "
+                @click="DelUsuario()"
               >
-                <path
-                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                ></path>
-              </svg>
-            </button>
+                <span class="align-middle">Eliminar</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  height="16"
+                  width="16"
+                  class="ms-1"
+                >
+                  <path
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </section>
   </div>
-  
 </template>
 <script>
 import axios from "axios";
@@ -251,12 +255,11 @@ export default {
 
       const filtro = document.getElementById("inpCodigo").value;
       const nombre = document.getElementById("inpNombre");
-      const usuario = document.getElementById("inputEmail"); 
-      const clave = document.getElementById("inpClave"); 
-      const DesAdi = document.getElementById("inpDesadi"); 
-      const ID=document.getElementById("inpID");
-      
-      
+      const usuario = document.getElementById("inputEmail");
+      const clave = document.getElementById("inpClave");
+      const DesAdi = document.getElementById("inpDesadi");
+      const ID = document.getElementById("inpID");
+
       console.log(ID.value);
       //  let NombreElemento =document.getElementById("inputLastName");
       if (filtro) {
@@ -268,69 +271,90 @@ export default {
           console.log(datos);
 
           //console.log(await datos.data.nombre);
-          nombre.value=datos.data.nombre;
-          usuario.value=datos.data.email;
-          clave.value=datos.data.clave;
-          DesAdi.value=datos.data.Descripcion;
-          ID.value=datos.data._id;
-          this.flashMessage.info({title: ' Usuarios', message: 'Usuarios consultado con éxito'});
+          nombre.value = datos.data.nombre;
+          usuario.value = datos.data.email;
+          clave.value = datos.data.clave;
+          DesAdi.value = datos.data.Descripcion;
+          ID.value = datos.data._id;
+          this.flashMessage.info({
+            title: " Usuarios",
+            message: "Usuarios consultado con éxito",
+          });
         } catch (error) {
-           this.flashMessage.error({title: ' Usuarios', message: 'Usuario No existe' || error });
+          this.flashMessage.error({
+            title: " Usuarios",
+            message: "Usuario No existe" || error,
+          });
+          nombre.value = "";
+          usuario.value = "";
+          clave.value = "";
+          DesAdi.value = "";
+          ID.value = 0;
           console.log(error);
         }
       }
     },
     async PostUsuario() {
-      //let resultadoElemento =document.getElementById("getResult");
-      //resultadoElemento.innerHTML="";
-
       const filtro = document.getElementById("inpCodigo");
       const nombre = document.getElementById("inpNombre");
-      const email = document.getElementById("inputEmail"); 
-      const clave = document.getElementById("inpClave"); 
-        const ID=document.getElementById("inpID");
-      
-     // const desadi = document.getElementById("inpDesadi"); 
+      const email = document.getElementById("inputEmail");
+      const clave = document.getElementById("inpClave");
+      const ID = document.getElementById("inpID");
+
+      // const desadi = document.getElementById("inpDesadi");
       const Nuevousuario = {
-        codigo :filtro.value ,
+        codigo: filtro.value,
         nombre: nombre.value,
         clave: clave.value,
-          email: email.value 
-     
+        email: email.value,
       };
       console.log(Nuevousuario);
       try {
-      let datos=await axios.post('http://localhost:4000/api/usuario-nuevo',Nuevousuario);
-       ID.value=datos.data._id;
+        let datos = await axios.post(
+          "http://localhost:4000/api/usuario-nuevo",
+          Nuevousuario
+        );
+        ID.value = datos.data._id;
         console.log(datos);
-      //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
-              this.flashMessage.info({title: 'Creación Usuarios', message: 'Usuarios Creado con éxito'});
-          } catch (error) {
-            this.flashMessage.error({title: 'Creación Usuarios', message: 'Error en Creación' || error });
-          console.log(error);
-        }
-                 
+        //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
+        this.flashMessage.info({
+          title: "Creación Usuarios",
+          message: "Usuarios Creado con éxito",
+        });
+      } catch (error) {
+        this.flashMessage.error({
+          title: "Creación Usuarios",
+          message: "Error en Creación" || error,
+        });
+        console.log(error);
+      }
     },
-       async DelUsuario() {
+    async DelUsuario() {
       //let resultadoElemento =document.getElementById("getResult");
       //resultadoElemento.innerHTML="";
 
       const filtro = document.getElementById("inpID").value;
-           
-     // const desadi = document.getElementById("inpDesadi"); 
-    
+
+      // const desadi = document.getElementById("inpDesadi");
+
       console.log(filtro);
       try {
-      let datos=await axios.delete(`http://localhost:4000/api/usuario/${filtro}`);
-      this.flashMessage.info({title: 'Borrado Usuarios', message: 'Usuarios Borrado con éxito'});
+        let datos = await axios.delete(
+          `http://localhost:4000/api/usuario/${filtro}`
+        );
+        this.flashMessage.info({
+          title: "Borrado Usuarios",
+          message: "Usuarios Borrado con éxito",
+        });
         console.log(datos);
-      //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
-
-          } catch (error) {
-              this.flashMessage.error({title: 'Borrado de Usuarios', message: 'Error en Borrado' || error });
-          console.log(error);
-        }
-                 
+        //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
+      } catch (error) {
+        this.flashMessage.error({
+          title: "Borrado de Usuarios",
+          message: "Error en Borrado" || error,
+        });
+        console.log(error);
+      }
     },
     async PutUsuario() {
       //let resultadoElemento =document.getElementById("getResult");
@@ -338,34 +362,39 @@ export default {
 
       const filtro = document.getElementById("inpCodigo");
       const nombre = document.getElementById("inpNombre");
-      const email = document.getElementById("inputEmail"); 
-      const clave = document.getElementById("inpClave"); 
-        const ID=document.getElementById("inpID");
-      
-     // const desadi = document.getElementById("inpDesadi"); 
+      const email = document.getElementById("inputEmail");
+      const clave = document.getElementById("inpClave");
+      const ID = document.getElementById("inpID");
+
+      // const desadi = document.getElementById("inpDesadi");
       const Actualizarusuario = {
-        
-        codigo :filtro.value ,
+        id: ID.value,
+        codigo: filtro.value,
         nombre: nombre.value,
         clave: clave.value,
-          email: email.value 
-     
+        email: email.value,
       };
       console.log(Actualizarusuario);
       try {
-      let datos=await axios.put('http://localhost:4000/api/usuario',Actualizarusuario);
-       ID.value=datos.data._id;
+        let datos = await axios.put(
+          "http://localhost:4000/api/usuario_actualizar",
+          Actualizarusuario
+        );
+        ID.value = datos.data._id;
         console.log(datos);
-      //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
-              this.flashMessage.info({title: 'Creación Usuarios', message: 'Usuarios Creado con éxito'});
-          } catch (error) {
-            this.flashMessage.error({title: 'Creación Usuarios', message: 'Error en Creación' || error });
-          console.log(error);
-        }
-                 
+        //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
+        this.flashMessage.info({
+          title: "Creación Usuarios",
+          message: "Usuarios actualizado con éxito",
+        });
+      } catch (error) {
+        this.flashMessage.error({
+          title: "Creación Usuarios",
+          message: "Error en Actualizacion" || error,
+        });
+        console.log(error);
+      }
     },
-
-
   },
 };
 </script > 

@@ -3,7 +3,7 @@
     <div class="flex-column row text-center">
       <div>
         <b-card no-body>
-          <b-tabs card>
+          <b-tabs card  vertical>
             <b-tab title="Datos Basicos" active>
               <div class="container" id="Basicos">
                 <form>
@@ -23,13 +23,17 @@
                         id="inputFirstName"
                         placeholder=""
                       />
-                      <button
+
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-12">
+                    <button
                         type="submit"
                         class="
                           btn btn-primary
                           float-end
                           pe-4
-                          ps-4
+                          ps-2
                           rounded-0 rounded-pill
                           text-uppercase
                         "
@@ -38,7 +42,7 @@
                         <svg
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          height="16"
+                          height="12"
                           width="16"
                           class="ms-1"
                         >
@@ -47,6 +51,7 @@
                           ></path>
                         </svg>
                       </button>
+                        </div>
                     </div>
                     <div class="mb-3 col-md-10">
                       <label class="form-label" for="iptdescripcion"

@@ -21,7 +21,7 @@ const newLocal='Menuppal'
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
              <a class="nav-link active" href="#">
-                    <router-link  to="/Inmicio" class="nav-item nav-link">
+                    <router-link  to="/Inicio" class="nav-item nav-link">
              
                Inicio
             

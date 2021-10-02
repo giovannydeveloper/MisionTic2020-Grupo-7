@@ -23,10 +23,10 @@ router.post ('/Categorias-nuevo', async (req, res ) =>{
 });
 
 // Get con parámetros
-router.get('/Categorias/:id', async(req, res) => {
-    const _id = req.params.id;
+router.get('/Categorias/:codigo', async(req, res) => {
+    const codigo = req.params.codigo;
     try {
-    const categoriadb = await Categorias.findOne({_id});
+    const categoriadb = await Categorias.findOne({codigo});
     res.json(categoriadb);
     } catch (err) {
     return res.status(400).json({
