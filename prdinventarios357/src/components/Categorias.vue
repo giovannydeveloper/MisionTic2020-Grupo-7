@@ -58,7 +58,7 @@ const newLocal='Categorias'
                   rounded-0 rounded-pill
                   text-uppercase
                 "
-                @click="GetCategoria()"
+                @click="GetConsulta()"
               >
                 >
                 <span class="align-middle">Consultar</span>
@@ -75,6 +75,19 @@ const newLocal='Categorias'
                 </svg>
               </button>
             </div>
+             <div>
+                      <b-form-checkbox
+                        id="chktodos"
+                        v-model="Valorchk"
+                        name="checkbox-1"
+                        value="V"
+                        unchecked-value="F"
+                      
+                      >
+                        Consultar Todos
+                      </b-form-checkbox>
+                                          
+  </div>
           </div>
  
           <div class="row">
@@ -174,6 +187,24 @@ const newLocal='Categorias'
               </button>
             </div>
           </div>
+          <div>
+          <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="Categoria in TodasCategorias" v-bind:key="Categoria.codigo">
+                    <td>{{Categoria.codigo}}</td>
+                    <td>{{Categoria.nombre}}</td>
+                    <td>{{Categoria.estado}}</td>
+                </tr>
+            </tbody>
+        </table>
+          </div>
         </form>
       </div>
     </section>
@@ -185,7 +216,19 @@ export default {
   name: "Categorias",
   props: {
     msg: String,
+    
   },
+  data(){
+    return {
+      Valorchk : "f",
+      TodasCategorias:[]
+    };
+  
+  },
+  computed: {
+
+},
+ 
   methods: {
     async GetCategoria() {
       //let resultadoElemento =document.getElementById("getResult");
@@ -322,7 +365,60 @@ export default {
         console.log(error);
       }
     },
+      async GetTodasCategoria() {
+     
+     
+      //  let NombreElemento =document.getElementById("inputLastName");
+     // if (codigo.value) {
+        try {
+          //let filtro='614feaa8649ab9e8feed6cdc'
+          let datos = await axios.get(
+            "http://localhost:4000/api/categorias/"
+          );
+          console.log(datos);
+          this.TodasCategorias=datos.data;
+          
+       
+          this.flashMessage.info({
+            title: "Categorias",
+            message: "Categorias consultada con éxito",
+          });
+        } catch (error) {
+          this.flashMessage.error({
+            title: "Categorias",
+            message: "Categorias No existe" || error,
+          });
+          console.log(error);
+        }
+    //  }
+    },
+    GetConsulta(){
+      
+      const todos = this.Valorchk
+          const codigo = document.getElementById("inpcodigo");
+       console.log(this.Valorchk)
+     if (todos == "V")
+      {
+       this.GetTodasCategoria();
+      }
+      else if (codigo.value=="") {
+           this.flashMessage.info({
+            title: "Categorias",
+            message: "No ha seleccionado categoria" ,
+          });
+      }
+      else
+      {
+        this.GetCategoria();
+      }
+
+    }
+
+
   },
+
+
+
 };
 </script > 
 <style scoped>
