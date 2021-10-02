@@ -71,8 +71,8 @@ router.get('/Categorias', async (req, res) => {
        }
    });
    // Put actualizar una nota
-   router.put('/Categorias/:id', async (req, res) => {
-       const _id = req.params.id;
+   router.put('/Categorias-actualizar', async (req, res) => {
+    const _id = req.body.id;
        const body = req.body;
        try {
            const categoriadb = await Categorias.findByIdAndUpdate(

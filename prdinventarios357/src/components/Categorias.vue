@@ -1,32 +1,31 @@
 const newLocal='Categorias'
 <template>
-  <div>
-    <div class="container"></div>
-
-    <section class="bg-light pb-5 pt-5">
-      <div class="mb-3 col-md-18">
+  <!--  <section class="bg-light pb-5 pt-5">-->
+  <!--   <div class="mb-3 col-md-12">
         <span class="input-group-text" id="inputGroup-sizing-sm"
           >CATEGORIAS</span
         >
       </div>
+      -->
+  <div class="mb-2 col-md-6">
+    <div class="container"></div>
+    <section class="bg-light pb-5 pt-5">
       <div class="container pb-2 pt-0">
         <form>
           <div class="row">
-            <div class="input-group input-group-sm mb-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
-              <input
-                type="text"
-                class="
-                  bg-light
-                  border-start-0 border-end-0 border-top-0
-                  form-control
-                  ps-0
-                  pe-0
-                  rounded-0
-                "
-                id="inpID"
-              />
-            </div>
+            <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
+            <input
+              type="text"
+              class="
+                bg-light
+                border-start-0 border-end-0 border-top-0
+                form-control
+                ps-0
+                pe-0
+                rounded-0
+              "
+              id="inpID"
+            />
           </div>
           <div class="row">
             <div class="mb-3 col-md-12">
@@ -77,30 +76,34 @@ const newLocal='Categorias'
               </button>
             </div>
           </div>
-
-          <div class="form-group">
-            <span class="input-group-text" id="inputGroup-sizing-sm"
-              >Descripción</span
-            >
-            <input
-              type="text"
-              class="form-control rounded-0"
-              id="inpdescripcion"
-              placeholder=""
-            />
+ 
+          <div class="row">
+            <div class="mb-3 col-md-12">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Descripción</span
+              >
+              <input
+                type="text"
+                class="form-control rounded-0"
+                id="inpdescripcion"
+                placeholder=""
+              />
+            </div>
+            <div class="row"></div>
           </div>
-          <div class="form-group row">
-            <div class="col-md-4">
+          <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group mr-2" role="group">
               <button
                 type="submit"
                 class="
                   btn btn-primary
-                  ps-6
-                  pe-6
+                  ps-4
+                  pe-2
                   rounded-0 rounded-pill
                   text-uppercase
+                  btn-md
                 "
-                @click="PostUsuario()"
+                @click="PostCategoria()"
               >
                 <span class="align-middle">Crear</span>
                 <svg
@@ -116,21 +119,22 @@ const newLocal='Categorias'
                 </svg>
               </button>
             </div>
-            <div class="col-md-4">
+            <div class="btn-group mr-2" role="group">
               <button
                 type="submit"
                 class="
-                     btn btn-primary
+                  btn btn-primary
                   ps-4
                   pe-2
                   rounded-0 rounded-pill
                   text-uppercase
+                  btn-md
                 "
-                @click="PutUsuario()"
+                @click="PutCategoria()"
               >
                 <span class="align-middle">Actualizar</span>
                 <svg
-            viewBox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="currentColor"
                   height="12"
                   width="16"
@@ -142,7 +146,7 @@ const newLocal='Categorias'
                 </svg>
               </button>
             </div>
-            <div class="col-md-4">
+            <div class="btn-group mr-2" role="group">
               <button
                 type="submit"
                 class="
@@ -151,13 +155,13 @@ const newLocal='Categorias'
                   pe-2
                   rounded-0 rounded-pill
                   text-uppercase
-                
+                  btn-md
                 "
-                @click="DelUsuario()"
+                @click="DelCategoria()"
               >
                 <span class="align-middle">Eliminar</span>
                 <svg
-                 viewBox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="currentColor"
                   height="12"
                   width="16"
@@ -189,7 +193,7 @@ export default {
 
       const codigo = document.getElementById("inpcodigo");
       const descripcion = document.getElementById("inpdescripcion");
-      const ID = document.getElementById("inpID").value;
+      const ID = document.getElementById("inpID");
 
       console.log(codigo.value);
       //  let NombreElemento =document.getElementById("inputLastName");
@@ -201,10 +205,9 @@ export default {
           );
           console.log(datos);
 
-          //console.log(await datos.data.nombre);
+          
           codigo.value = datos.data.codigo;
           descripcion.value = datos.data.nombre;
-
           ID.value = datos.data._id;
           this.flashMessage.info({
             title: "Categorias",
@@ -223,43 +226,42 @@ export default {
       //let resultadoElemento =document.getElementById("getResult");
       //resultadoElemento.innerHTML="";
 
-      const filtro = document.getElementById("inpCodigo");
-      const nombre = document.getElementById("inpNombre");
-      const email = document.getElementById("inputEmail");
-      const clave = document.getElementById("inpClave");
+      const codigo = document.getElementById("inpcodigo");
+      const descripcion = document.getElementById("inpdescripcion");
       const ID = document.getElementById("inpID");
 
+
       // const desadi = document.getElementById("inpDesadi");
-      const Nuevousuario = {
-        codigo: filtro.value,
-        nombre: nombre.value,
-        clave: clave.value,
-        email: email.value,
+      const Nuevacategoria = {
+        codigo: codigo.value,
+        nombre: descripcion.value,
+        
       };
-      console.log(Nuevousuario);
+      console.log(Nuevacategoria);
       try {
         let datos = await axios.post(
-          "http://localhost:4000/api/usuario-nuevo",
-          Nuevousuario
+          "http://localhost:4000/api/Categorias-nuevo",
+          Nuevacategoria
         );
         ID.value = datos.data._id;
         console.log(datos);
         //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
         this.flashMessage.info({
-          title: "Creación Usuarios",
-          message: "Usuarios Creado con éxito",
+          title: "Creación Categorias",
+          message: "Categoriaa creada con éxito",
         });
       } catch (error) {
         this.flashMessage.error({
-          title: "Creación Usuarios",
+          title: "Creación Categorias",
           message: "Error en Creación" || error,
         });
         console.log(error);
       }
     },
     async DelCategoria() {
-      //let resultadoElemento =document.getElementById("getResult");
-      //resultadoElemento.innerHTML="";
+     const codigo = document.getElementById("inpcodigo");
+      const descripcion = document.getElementById("inpdescripcion");
+      const ID = document.getElementById("inpID");
 
       const filtro = document.getElementById("inpID").value;
 
@@ -268,55 +270,53 @@ export default {
       console.log(filtro);
       try {
         let datos = await axios.delete(
-          `http://localhost:4000/api/usuario/${filtro}`
+          `http://localhost:4000/api/Categorias/${filtro}`
         );
         this.flashMessage.info({
-          title: "Borrado Usuarios",
-          message: "Usuarios Borrado con éxito",
+          title: "Borrado Categorias",
+          message: "Categoría Borrado con éxito",
         });
+        codigo.value="";
+        descripcion.value="";
+        ID.value="";
         console.log(datos);
-        //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
+        
       } catch (error) {
         this.flashMessage.error({
-          title: "Borrado de Usuarios",
+          title: "Borrado de CAtegoria",
           message: "Error en Borrado" || error,
         });
         console.log(error);
       }
     },
     async PutCategoria() {
-      //let resultadoElemento =document.getElementById("getResult");
-      //resultadoElemento.innerHTML="";
-
-      const filtro = document.getElementById("inpCodigo");
-      const nombre = document.getElementById("inpNombre");
-      const email = document.getElementById("inputEmail");
-      const clave = document.getElementById("inpClave");
+     
+      const codigo = document.getElementById("inpcodigo");
+      const descripcion = document.getElementById("inpdescripcion");
       const ID = document.getElementById("inpID");
+     
+      const Actualizacategoria = {
+        codigo: codigo.value,
+        nombre: descripcion.value,
+        id:ID.value
 
-      // const desadi = document.getElementById("inpDesadi");
-      const Actualizarusuario = {
-        codigo: filtro.value,
-        nombre: nombre.value,
-        clave: clave.value,
-        email: email.value,
       };
-      console.log(Actualizarusuario);
+      console.log(Actualizacategoria);
       try {
         let datos = await axios.put(
-          "http://localhost:4000/api/usuario",
-          Actualizarusuario
+          "http://localhost:4000/api/Categorias-actualizar",
+          Actualizacategoria
         );
         ID.value = datos.data._id;
         console.log(datos);
-        //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
+
         this.flashMessage.info({
-          title: "Creación Usuarios",
-          message: "Usuarios Creado con éxito",
+          title: "Actualización Categorias",
+          message: "Categoria Creada con éxito",
         });
       } catch (error) {
         this.flashMessage.error({
-          title: "Creación Usuarios",
+          title: "Actualización Categorias",
           message: "Error en Creación" || error,
         });
         console.log(error);
