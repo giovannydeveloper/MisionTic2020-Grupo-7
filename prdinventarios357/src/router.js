@@ -18,6 +18,7 @@ export default new Router({
                     name: "Login",
                     component: Login
                 },
+                
                 {
                     path: "/Inicial",
                     name: "Inicial",

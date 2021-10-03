@@ -21,6 +21,16 @@ const newLocal='Menuppal'
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
              <a class="nav-link active" href="#">
+                    <router-link  to="/Login" class="nav-item nav-link">
+             
+               Login
+            
+                </router-link>
+
+              </a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link active" href="#">
                     <router-link  to="/Inicio" class="nav-item nav-link">
              
                Inicio
@@ -76,6 +86,7 @@ const newLocal='Menuppal'
                 </router-link>
                 </a>
             </li>
+
           </ul>
 
           <form class="d-flex">
