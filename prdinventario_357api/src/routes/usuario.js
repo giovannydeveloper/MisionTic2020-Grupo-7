@@ -1,6 +1,5 @@
 const  express = require('express');
 const router = express.Router();
-
 const Usuario = require('../models/usuario');
 
 // Crear usuario
@@ -47,7 +46,6 @@ router.get('/usuarios', async (req, res) => {
     }
 });
    
-
    // Delete eliminar un usuario
    router.delete('/usuario/:id', async (req, res) => {
        const _id = req.params.id;

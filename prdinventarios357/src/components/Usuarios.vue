@@ -53,6 +53,7 @@ const newLocal='Usuarios'
                   rounded-0 rounded-pill
                   text-uppercase
                 "
+                v-click
                 @click="GetUsuario()"
               >
                 >
@@ -250,10 +251,7 @@ export default {
 
   methods: {
     async GetUsuario() {
-      //let resultadoElemento =document.getElementById("getResult");
-      //resultadoElemento.innerHTML="";
-
-      const filtro = document.getElementById("inpCodigo").value;
+       const filtro = document.getElementById("inpCodigo").value;
       const nombre = document.getElementById("inpNombre");
       const usuario = document.getElementById("inputEmail");
       const clave = document.getElementById("inpClave");
