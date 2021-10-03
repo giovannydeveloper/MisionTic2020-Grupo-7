@@ -16,6 +16,14 @@ app.use(express.urlencoded({ extended: true }));
 // Rutas
 app.use('/api', require('./src/routes/usuario'));
 app.use('/api', require('./src/routes/categorias'));
+app.use('/api', require('./src/routes/productos'));
+app.use('/api', require('./src/routes/terceros'));
+app.use('/api', require('./src/routes/documentosenca'));
+app.use('/api', require('./src/routes/documentosdet'));
+
+
+
+
 
 
 // Conexión base de datos

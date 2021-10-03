@@ -225,9 +225,7 @@ export default {
     };
   
   },
-  computed: {
 
-},
  
   methods: {
     async GetCategoria() {
