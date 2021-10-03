@@ -231,6 +231,8 @@
                       ></textarea>
                     </div>
                     <div class="text-end">
+                       <div class="btn-toolbar" role="toolbar">
+                      <div class="btn-group mr-2" role="group">
                       <button
                         type="submit"
                         class="
@@ -255,6 +257,34 @@
                           ></path>
                         </svg>
                       </button>
+                      </div>
+                      <div class="btn-group mr-2" role="group">
+                      <button
+                        type="submit"
+                        class="
+                          btn btn-primary
+                          ps-4
+                          pe-4
+                          rounded-0 rounded-pill
+                          text-uppercase
+                        "
+                        @click="DelProducto()"
+                      >
+                        <span class="align-middle">Eliminar</span>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          height="16"
+                          width="16"
+                          class="ms-1"
+                        >
+                          <path
+                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                          ></path>
+                        </svg>
+                      </button>
+                      </div>
+                       </div>
                     </div>
                   </form>
                 </div>
@@ -446,198 +476,7 @@
               </b-tab>
               <b-tab title="consulta">
                 <div class="container" id="Consultas">
-                  <form>
-                    <div class="row">
-                      <div class="mb-3 col-md-4">
-                        <label class="form-label" for="iptnit">Código</label>
-                        <input
-                          type="text"
-                          class="
-                            bg-light
-                            border-start-0 border-end-0 border-top-0
-                            form-control
-                            ps-0
-                            pe-0
-                            rounded-0
-                          "
-                          id="inpcodigoconsulta"
-                          placeholder=""
-                        />
-                        <button
-                          type="submit"
-                          class="
-                            btn btn-primary
-                            float-end
-                            pe-4
-                            ps-4
-                            rounded-0 rounded-pill
-                            text-uppercase
-                          "
-                        >
-                          <span class="align-middle">Consultar</span>
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            height="16"
-                            width="16"
-                            class="ms-1"
-                          >
-                            <path
-                              d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="mb-3 col-md-6">
-                        <label class="form-label" for="iptnombre"
-                          >bodegas</label
-                        >
-                        <input
-                          type="text"
-                          class="
-                            bg-light
-                            border-start-0 border-end-0 border-top-0
-                            form-control
-                            ps-0
-                            pe-0
-                            rounded-0
-                          "
-                          id="inpBodConsulta"
-                          placeholder=""
-                        />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="mb-3 col-md-12">
-                        <label class="form-label text-primary" for="iptprecio"
-                          >Stock por Bodega</label
-                        >
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th>ID</th>
-                              <th>bodega</th>
-                              <th>Descripción</th>
-                              <th>stock</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th>1</th>
-                              <td>10</td>
-                              <td>Bodega principal</td>
-                              <td>50</td>
-                            </tr>
-                            <tr>
-                              <th>2</th>
-                              <td>12</td>
-                              <td>Bodega Medellín</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                              <th>3</th>
-                              <td>13</td>
-                              <td>Bodega Bogotá</td>
-                              <td>100</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="mb-3 col-md-12">
-                        <label class="form-label text-primary" for="iptprecio"
-                          >Movimiento</label
-                        >
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Tipo</th>
-                              <th scope="col">Número</th>
-                              <th scope="col">Bodega</th>
-                              <th scope="col">Can. Entrada</th>
-                              <th scope="col">Can. Salida</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Compras</td>
-                              <td>2000</td>
-                              <td>Bodega Principal</td>
-                              <td>100</td>
-                              <td>0</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>venta</td>
-                              <td>2001</td>
-                              <td>Bodega Principal</td>
-                              <td>0</td>
-                              <td>5</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Compras</td>
-                              <td>2003</td>
-                              <td>Bodega Medellín</td>
-                              <td>50</td>
-                              <td>0</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="col-md-12 mb-2">
-                        <label
-                          class="form-label text-primary"
-                          for="iptdescuento"
-                          >Pedidos Pendientes</label
-                        >
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Tipo</th>
-                              <th scope="col">Número</th>
-                              <th scope="col">Bodega</th>
-                              <th scope="col">Can. Pedida</th>
-                              <th scope="col">Can. Despachada</th>
-                              <th scope="col">Can. Pendiente</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Pedido Principal</td>
-                              <td>300</td>
-                              <td>Bodega Principal</td>
-                              <td>1</td>
-                              <td>0</td>
-                              <td>1</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Pedido Principal</td>
-                              <td>301</td>
-                              <td>Bodega Principal</td>
-                              <td>200</td>
-                              <td>50</td>
-                              <td>150</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Pedido Bogotá</td>
-                              <td>300</td>
-                              <td>Bodega Bogotá</td>
-                              <td>120</td>
-                              <td>100</td>
-                              <td>20</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div class="text-end"></div>
-                  </form>
+                  <consulta />
                 </div>
               </b-tab>
             </b-tabs>
@@ -649,9 +488,14 @@
 </template>
 <script>
 import axios from "axios";
+import consulta from "./ConsultaItems.vue"
 
 export default {
   name: "Productos",
+  components :
+  {
+      consulta,
+  },
   props: {
     msg: String,
   },
@@ -709,7 +553,7 @@ export default {
           console.log(datos.data.nopedir);
           if (datos.data.nopedir == true) {
             inpNopedir.checked = true;
-         }
+          }
 
           this.flashMessage.info({
             title: "Productos",
@@ -726,7 +570,7 @@ export default {
           precio.value = 0;
           inpPrecioIVA.value = 0;
           cboivaventa.value = 0;
-          cboivacompra.value = 0
+          cboivacompra.value = 0;
           cboinventario.value = 0;
           cbomanejalotes.value = 0;
           inputTextAdi.value = "";
@@ -737,14 +581,12 @@ export default {
           iptdescuento.value = 0;
           iptprecio.value = 0;
           iptdias.value = 0;
-         inpNopedir.checked = false;
-         
-          
+          inpNopedir.checked = false;
         }
       }
     },
     async PostProducto() {
-     const codigo = document.getElementById("inpcodigo");
+      const codigo = document.getElementById("inpcodigo");
       const descripcion = document.getElementById("inpDescripcion");
       const ID = document.getElementById("inpID");
 
@@ -763,30 +605,29 @@ export default {
       const iptdias = document.getElementById("iptdias");
       const inpNopedir = document.getElementById("inpNopedir");
       const inpPrecioIVA = document.getElementById("inpPrecioIVA");
-      const Nopedir=false
-                if (inpNopedir.checked == true) {
-            this.Nopedir= true;
-         }
+      const Nopedir = false;
+      if (inpNopedir.checked == true) {
+        this.Nopedir = true;
+      }
 
       const ActualizaProducto = {
-                
-          codigo: codigo.value,
-          descripcion: descripcion.value,
-          precio: precio.value,
-          preciomasiva: inpPrecioIVA.value,
-          ivaventas: cboivaventa.value,
-          ivacompras: cboivacompra.value,
-          manejainv: cboinventario.value,
-          loteserial: cbomanejalotes.value,
-          notas: inputTextAdi.value,
-          idproveedor:inpproveedor.value ,
-          idbodegafija:inpbodega.value ,
-          costocompra: iptcosto.value,
-          costoemergencia: iptcostoe.value,
-          porcentajedcto:iptdescuento.value ,
-          factor: iptprecio.value,
-          dias: iptdias.value,
-          nopedir:  Nopedir,
+        codigo: codigo.value,
+        descripcion: descripcion.value,
+        precio: precio.value,
+        preciomasiva: inpPrecioIVA.value,
+        ivaventas: cboivaventa.value,
+        ivacompras: cboivacompra.value,
+        manejainv: cboinventario.value,
+        loteserial: cbomanejalotes.value,
+        notas: inputTextAdi.value,
+        idproveedor: inpproveedor.value,
+        idbodegafija: inpbodega.value,
+        costocompra: iptcosto.value,
+        costoemergencia: iptcostoe.value,
+        porcentajedcto: iptdescuento.value,
+        factor: iptprecio.value,
+        dias: iptdias.value,
+        nopedir: Nopedir,
       };
       console.log(ActualizaProducto);
       try {
@@ -811,9 +652,24 @@ export default {
     },
     async DelProducto() {
       const codigo = document.getElementById("inpcodigo");
-      const descripcion = document.getElementById("inpdescripcion");
+      const descripcion = document.getElementById("inpDescripcion");
       const ID = document.getElementById("inpID");
 
+      const precio = document.getElementById("inpprecio");
+      const cboivaventa = document.getElementById("cboivaventa");
+      const cboivacompra = document.getElementById("cboivacompra");
+      const cboinventario = document.getElementById("cboinventario");
+      const cbomanejalotes = document.getElementById("cbomanejalotes");
+      const inputTextAdi = document.getElementById("inputTextAdi");
+      const inpproveedor = document.getElementById("inpproveedor");
+      const inpbodega = document.getElementById("inpbodega");
+      const iptcosto = document.getElementById("iptcosto");
+      const iptcostoe = document.getElementById("iptcostoe");
+      const iptdescuento = document.getElementById("iptdescuento");
+      const iptprecio = document.getElementById("iptprecio");
+      const iptdias = document.getElementById("iptdias");
+      const inpNopedir = document.getElementById("inpNopedir");
+      const inpPrecioIVA = document.getElementById("inpPrecioIVA");
       const filtro = document.getElementById("inpID").value;
 
       // const desadi = document.getElementById("inpDesadi");
@@ -821,15 +677,30 @@ export default {
       console.log(filtro);
       try {
         let datos = await axios.delete(
-          `http://localhost:4000/api/Producto${filtro}`
+          `http://localhost:4000/api/Productos/${filtro}`
         );
         this.flashMessage.info({
-          title: "Borrado Categorias",
-          message: "Categoría Borrado con éxito",
+          title: "Borrado Productos",
+          message: "Productos Borrado con éxito",
         });
         codigo.value = "";
         descripcion.value = "";
         ID.value = "";
+        precio.value = 0;
+        inpPrecioIVA.value = 0;
+        cboivaventa.value = 0;
+        cboivacompra.value = 0;
+        cboinventario.value = 0;
+        cbomanejalotes.value = 0;
+        inputTextAdi.value = "";
+        inpproveedor.value = "";
+        inpbodega.value = "";
+        iptcosto.value = 0;
+        iptcostoe.value = 0;
+        iptdescuento.value = 0;
+        iptprecio.value = 0;
+        iptdias.value = 0;
+        inpNopedir.checked = false;
         console.log(datos);
       } catch (error) {
         this.flashMessage.error({
@@ -840,7 +711,6 @@ export default {
       }
     },
     async PutProducto() {
-     
       const codigo = document.getElementById("inpcodigo");
       const descripcion = document.getElementById("inpDescripcion");
       const ID = document.getElementById("inpID");
@@ -860,29 +730,29 @@ export default {
       const iptdias = document.getElementById("iptdias");
       const inpNopedir = document.getElementById("inpNopedir");
       const inpPrecioIVA = document.getElementById("inpPrecioIVA");
-                if (inpNopedir.checked == true) {
-            inpNopedir.value= "true";
-         }
+      if (inpNopedir.checked == true) {
+        inpNopedir.value = "true";
+      }
 
       const ActualizaProducto = {
-                id:ID.value ,
-          codigo: codigo.value,
-          descripcion: descripcion.value,
-          precio: precio.value,
-          preciomasiva: inpPrecioIVA.value,
-          ivaventas: cboivaventa.value,
-          ivacompras: cboivacompra.value,
-          manejainv: cboinventario.value,
-          loteserial: cbomanejalotes.value,
-          notas: inputTextAdi.value,
-          idproveedor:inpproveedor.value ,
-          idbodegafija: inpbodega.value ,
-          costocompra: iptcosto.value,
-          costoemergencia: iptcostoe.value,
-          porcentajedcto:iptdescuento.value ,
-          factor: iptprecio.value,
-          dias: iptdias.value,
-          nopedir:  inpNopedir.value,
+        id: ID.value,
+        codigo: codigo.value,
+        descripcion: descripcion.value,
+        precio: precio.value,
+        preciomasiva: inpPrecioIVA.value,
+        ivaventas: cboivaventa.value,
+        ivacompras: cboivacompra.value,
+        manejainv: cboinventario.value,
+        loteserial: cbomanejalotes.value,
+        notas: inputTextAdi.value,
+        idproveedor: inpproveedor.value,
+        idbodegafija: inpbodega.value,
+        costocompra: iptcosto.value,
+        costoemergencia: iptcostoe.value,
+        porcentajedcto: iptdescuento.value,
+        factor: iptprecio.value,
+        dias: iptdias.value,
+        nopedir: inpNopedir.value,
       };
       console.log(ActualizaProducto);
       try {
@@ -907,7 +777,7 @@ export default {
     },
     CrearActualizar() {
       const ID = document.getElementById("inpID");
-      console.log(ID.value)
+      console.log(ID.value);
       if (ID.value == "") {
         this.PostProducto();
       } else {
