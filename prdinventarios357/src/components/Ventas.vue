@@ -360,6 +360,7 @@
                     <th scope="col">descripcion</th>
                     <th scope="col">cantidad</th>
                     <th scope="col">Precio Und</th>
+                    <th scope="col">% Dcto</th>
                     <th scope="col">% Iva</th>
                     <th scope="col">Subtotal</th>
                   </tr>
@@ -394,6 +395,11 @@
                     <td>
                       <input type="number" 
                       class="bg-light form-control ps-0 pe-0 rounded-0"
+                      v-model="item.dcto" />
+                    </td>
+                    <td>
+                      <input type="number" 
+                      class="bg-light form-control ps-0 pe-0 rounded-0"
                       v-model="item.iva" />
                     </td>
                     <td>
@@ -418,21 +424,21 @@
                 >Subtotal</span
               >
               <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{total}}</span>
+                >{{Subtotal}}</span>
             </div>
             <div class="col-md-2">
               <span class="input-group-text" id="inputGroup-sizing-sm"
                 >Descuentos</span
               >
              <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{total}}</span>
+                >{{Descuentos}}</span>
             </div>
             <div class="col-md-2">
               <span class="input-group-text" id="inputGroup-sizing-sm"
                 >Impuestos</span
               >
                <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{total}}</span>
+                >{{Impuestos}}</span>
             </div>
             <div class="col-md-2">
               <span class="input-group-text" id="inputGroup-sizing-sm"
@@ -440,7 +446,7 @@
               >
                        
                 <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{total}}</span>
+                >{{Total}}</span>
             </div>
 
           
@@ -496,17 +502,16 @@ export default {
       items: [],
       bodegas: [],
       tipos: [],
-       totalsubtotal: 0,
-        totaldescuentos: 0,
-        totalimpuestos: 0,
-        totaltotal: 0
+    
     };
   },
+  
   watch: {
     items: {
       handler(newValue) {
         newValue.forEach((item) => {
-          item.subtotal = item.cantidad * item.precio;
+            const pordcto = ( (item.dcto) / 100);
+          item.subtotal = item.cantidad * item.precio * pordcto;
         });
       },
       deep: true,
@@ -514,35 +519,35 @@ export default {
   },
 
  computed: {
-        total  () {
+        Subtotal  () {
             return this.items.reduce((total,item)=>{
                 return total + item.subtotal; 
             },0);
             
             
         },
-      /*  descuentos: function () {
-            var tt = 0;
-            $.each(this.rows, function (i, e) {
-                tt += accounting.unformat(e.tdescuentos, ",");
-            });
-            return tt;
+        Descuentos  () {
+            return this.items.reduce((total,item)=>{
+                return total + (item.subtotal * (item.dcto/100)); 
+            },0);
+            
+            
         },
-        Impuestos: function () {
-            var tt = 0;
-            $.each(this.rows, function (i, e) {
-                tt += accounting.unformat(e.timpuestos, ",");
-            });
-            return tt;
+      Impuestos  () {
+            return this.items.reduce((total,item)=>{
+                return total + ((item.subtotal * (item.dcto/100))*(item.iva/100)); 
+            },0);
+            
+            
         },
-        total: function () {
-            var tt = 0;
-            $.each(this.rows, function (i, e) {
-                tt += accounting.unformat(e.timpuestos, ",");
-            });
-            return tt;
+        Total  () {
+            return this.items.reduce((total,item)=>{
+                return total + ((item.subtotal * (1-(item.dcto/100)))*(1+(item.iva/100))); 
+            },0);
+            
+            
         },
-        */
+      
         
 
     },
@@ -555,9 +560,34 @@ export default {
       const precio = document.getElementById("inpprecio");
       const dcto = document.getElementById("inpdcto");
       const iva = document.getElementById("inpiva");
-      const subtotal = cantidad.value * precio.value * (dcto.value / 100);
-      console.log(subtotal);
+     const subtotal=0;
 
+      if (cantidad.value=="")
+      {
+          cantidad.value=1
+      }
+      if (precio.value=="")
+      {
+          precio.value=0
+      }
+      if (dcto.value=="")
+      {
+          dcto.value=0
+      }
+      if (iva.value=="")
+      {
+          iva.value=0
+      }
+   /*   const pordcto = ( (dcto.value) / 100);
+      const subtotal= cantidad.value * precio.value  *  pordcto.toFixed(2);
+      console.log(pordcto);
+      console.log((cantidad.value * precio.value) );
+      console.log((dcto.value / 100));
+      
+
+      
+      console.log(subtotal);
+*/
       this.items.push({
         codigo: codigo.value,
         descripcion: descripcion.value,
