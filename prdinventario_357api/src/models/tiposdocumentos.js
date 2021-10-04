@@ -9,11 +9,12 @@ const tipoSchema = new Schema({
         require: [true, "Código de usuario"]
     },
     nombre: String,
-    activo: {
+      tipodoc :{ type : Number},
+      activo: {
         type: Boolean,
         default: true
-    },
-    tipodoc :{ type : Number}
+    }
+
 });
 const tipo = mongoose.model('Tipo_Documentos', tipoSchema);
 module.exports =tipo;

@@ -9,7 +9,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Router from './router'
 import axios from 'axios';
 import FlashMessage from '@smartweb/vue-flash-message';
+
+
 //import Vuex from 'vuex';
+
 
 Vue.use(FlashMessage);
 Vue.prototype.$http = axios;

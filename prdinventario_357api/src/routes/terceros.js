@@ -34,7 +34,28 @@ router.get('/Terceros/:id', async(req, res) => {
     })
     }
 });
-// Get con todos los documentos
+// Get con parámetros nombre
+router.get('/Terceros_nombre/:nombre', async(req, res) => {
+    const nombre = req.params.nombre;
+    try {
+    const tercerodb = await Terceros.find(
+        {
+        $or : [
+        {nombre : {'$regex' : nombre}},
+        {nit: {'$regex' : nombre}},
+        ]
+    
+    }); 
+    res.json(tercerodb);
+    } catch (err) {
+    return res.status(400).json({
+                    mensaje: err.message ||  'Ocurrio un error',
+    err
+    })
+    }
+});
+
+// Get con todos los tercero
 router.get('/Terceros', async (req, res) => {
     try {
         const tercerodb = await Terceros.find();

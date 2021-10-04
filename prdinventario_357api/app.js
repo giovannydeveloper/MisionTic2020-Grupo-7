@@ -20,6 +20,9 @@ app.use('/api', require('./src/routes/productos'));
 app.use('/api', require('./src/routes/terceros'));
 app.use('/api', require('./src/routes/documentosenca'));
 app.use('/api', require('./src/routes/documentosdet'));
+app.use('/api', require('./src/routes/bodegas'));
+app.use('/api', require('./src/routes/tiposdocumentos'));
+
 
 
 

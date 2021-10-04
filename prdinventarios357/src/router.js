@@ -8,6 +8,7 @@ import Usuarios from './components/Usuarios.vue';
 import Productos from './components/Productos.vue';
 import Carrito from './components/Carrito.vue';
 import Login from './components/Login.vue';
+import Ventas from './components/Ventas.vue'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
                     name: "Productos",
                     component: Productos
                 },
+                {
+                    path: "/Ventas",
+                    name: "Ventas",
+                    component: Ventas
+                },
         /*      
                 {
                     path: "/Bodegas",
@@ -52,11 +58,7 @@ export default new Router({
                     name: "Tipos",
                     component: Tipos
                 },
-                {
-                    path: "/Facturas",
-                    name: "Facturas",
-                    component: Facturas
-                },
+                
                 {
                     path: "/Compras",
                     name: "Compras",
