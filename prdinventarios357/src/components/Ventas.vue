@@ -1,28 +1,34 @@
 <template>
   <div class="container">
-    <section class="bg-light pb-5 pt-5">
-      <div class="container pb-5 pt-5">
+    <section class="bg-light pb-0 pt-0">
+      <div class="container pb-5 pt-0">
         <h2 class="text-center">FACTURA</h2>
         <form>
           <div class="row">
             <div class="mb-3 col-md-3">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Fecha</span
+              >
               <div class="form-group">
                 <div clase="input-group date">
                   <b-form-datepicker
                     v-model="date"
                     placeholder="dd/mm/yyyy"
                     id="idfecha"
-                     
-                    :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
-                    
+                    :date-format-options="{
+                      year: 'numeric',
+                      month: 'numeric',
+                      day: 'numeric',
+                    }"
                   ></b-form-datepicker>
                 </div>
               </div>
             </div>
             <div class="mb-3 col-md-6">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Condición Pago</span>
-              
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Condición Pago</span
+              >
+
               <select
                 id="formInput4"
                 class="
@@ -31,21 +37,22 @@
                   form-control
                   ps-0
                   pe-0
-                  rounded-0 
+                  rounded-0
                 "
               >
                 <option disabled selected>Contado</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
+                <option>Crèdito</option>
+                
               </select>
             </div>
             <div class="mb-3 col-md-2"></div>
           </div>
           <div class="row">
             <div class="mb-3 col-md-8">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Documento</span>
-              
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Documento</span
+              >
+
               <select
                 id="seldocumento"
                 name="documentos"
@@ -58,13 +65,19 @@
                   rounded-0
                 "
               >
-              <option v-for="(tipo,index) in tipos" :key="index" :value="tipo.prefijo">{{tipo.nombre}} 
+                <option
+                  v-for="(tipo, index) in tipos"
+                  :key="index"
+                  :value="tipo.prefijo"
+                >
+                  {{ tipo.nombre }}
                 </option>
-               
               </select>
             </div>
             <div class="mb-3 col-md-2">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Número</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Número</span
+              >
               <input
                 type="text"
                 class="
@@ -82,7 +95,9 @@
           </div>
           <div class="row">
             <div class="mb-3 col-md-9">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Bodega</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Bodega</span
+              >
               <select
                 id="selbodega"
                 name="bodegas"
@@ -95,18 +110,22 @@
                   rounded-0
                 "
               >
-                <option v-for="(bodega,index) in bodegas" :key="index" :value="bodega.codigo">{{bodega.nombre}} 
+                <option
+                  v-for="(bodega, index) in bodegas"
+                  :key="index"
+                  :value="bodega.codigo"
+                >
+                  {{ bodega.nombre }}
                 </option>
-
- 
-                
               </select>
             </div>
           </div>
           <div class="row">
             <div class="mb-3 col-md-7">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Cliente</span>
-               
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Cliente</span
+              >
+
               <input
                 type="text"
                 class="
@@ -121,8 +140,8 @@
                 placeholder=""
               />
             </div>
-             <div class="mb-3 col-md-1.5">
-                <button
+            <div class="mb-3 col-md-1.5">
+              <button
                 type="submit"
                 class="
                   btn btn-primary
@@ -146,12 +165,11 @@
                   ></path>
                 </svg>
               </button>
-             
-
-        
             </div>
             <div class="mb-3 col-md-4">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nit</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Nit</span
+              >
               <input
                 type="text"
                 class="
@@ -169,7 +187,9 @@
           </div>
           <div class="row">
             <div class="col-md-3 mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Código</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Código</span
+              >
               <input
                 type="text"
                 class="
@@ -183,9 +203,8 @@
                 id="inpcodigo"
                 placeholder=""
               />
-               
             </div>
-          <div class="col-md-2 mb-3">
+            <div class="col-md-2 mb-3">
               <button
                 type="submit"
                 class="
@@ -210,11 +229,12 @@
                   ></path>
                 </svg>
               </button>
-
-          </div>
-           <div class="col-md-7 mb-3">
-               <span class="input-group-text" id="inputGroup-sizing-sm">Descripción</span>
-            <input
+            </div>
+            <div class="col-md-7 mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Descripción</span
+              >
+              <input
                 type="text"
                 class="
                   bg-light
@@ -228,10 +248,12 @@
                 placeholder=""
               />
             </div>
-            </div>
-           <div class="row"> 
+          </div>
+          <div class="row">
             <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Cantidad</span
+              >
               <input
                 type="text"
                 class="
@@ -247,7 +269,9 @@
               />
             </div>
             <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Precio Und</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Precio Und</span
+              >
               <input
                 type="text"
                 class="
@@ -263,7 +287,9 @@
               />
             </div>
             <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm">% Dcto</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >% Dcto</span
+              >
               <input
                 type="text"
                 class="
@@ -279,7 +305,9 @@
               />
             </div>
             <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm">% IVA</span>
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >% IVA</span
+              >
               <input
                 type="text"
                 class="
@@ -294,7 +322,7 @@
                 placeholder=""
               />
             </div>
-            
+
             <div class="col-md-3">
               <button
                 type="submit"
@@ -321,9 +349,9 @@
                 </svg>
               </button>
             </div>
-           </div>
+          </div>
           <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
               <table class="table">
                 <thead>
                   <tr>
@@ -337,37 +365,85 @@
                   </tr>
                 </thead>
                 <tbody>
-                   <tr  v-for="(item, index) in items" :key="index">
-                    <td>{{index+1}}</td>
+                  <tr v-for="(item, index) in items" :key="index">
+                    <td>{{ index + 1 }}</td>
                     <td>
-                        <input type="text" v-model="item.codigo">
+                      <input
+                        type="text"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.codigo"
+                      />
                     </td>
                     <td>
-                        <input type="text" v-model="item.descripcion">
+                        
+                      <input type="text"
+                      class="bg-light form-control ps-0 pe-0 rounded-0"
+                       v-model="item.descripcion" />
+                      
                     </td>
                     <td>
-                        <input type="number" v-model="item.cantidad">
+                      <input type="number" 
+                      class="bg-light form-control ps-0 pe-0 rounded-0"
+                      v-model="item.cantidad" />
                     </td>
                     <td>
-                        <input type="number" v-model="item.precio">
+                      <input type="number" 
+                      class="bg-light form-control ps-0 pe-0 rounded-0"
+                      v-model="item.precio" />
                     </td>
                     <td>
-                        <input type="number" v-model="item.iva">
+                      <input type="number" 
+                      class="bg-light form-control ps-0 pe-0 rounded-0"
+                      v-model="item.iva" />
                     </td>
                     <td>
-                        <input type="number" v-model="item.subtotal">
+                      <input type="number" 
+                      class="bg-light form-control ps-0 pe-0 rounded-0"
+                      v-model="item.subtotal" />
                     </td>
                     <td>
-                        <input type="button" @click="EliminarItem">
+                      <button class="btn btn-primary btn-xs"
+                      
+                       @click="EliminarItem" >Borrar
+                       </button>
                     </td>
-                    
-                    
                   </tr>
-                
                 </tbody>
               </table>
             </div>
-             
+          </div>
+              <div class="row">
+            <div class="col-md-2">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Subtotal</span
+              >
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >{{total}}</span>
+            </div>
+            <div class="col-md-2">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Descuentos</span
+              >
+             <span class="input-group-text" id="inputGroup-sizing-sm"
+                >{{total}}</span>
+            </div>
+            <div class="col-md-2">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Impuestos</span
+              >
+               <span class="input-group-text" id="inputGroup-sizing-sm"
+                >{{total}}</span>
+            </div>
+            <div class="col-md-2">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Total</span
+              >
+                       
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                >{{total}}</span>
+            </div>
+
+          
           </div>
           <div class="mb-3">
             <input type="checkbox" class="form-check-input" id="formInput57" />
@@ -398,10 +474,8 @@
               </svg>
             </button>
           </div>
-                
         </form>
       </div>
-    
     </section>
   </div>
 </template>
@@ -419,48 +493,86 @@ export default {
         format: "DD/MM/YYYY",
         useCurrent: false,
       },
-      items: [
-       
-      ], 
-      bodegas:[],
-      tipos:[],
+      items: [],
+      bodegas: [],
+      tipos: [],
+       totalsubtotal: 0,
+        totaldescuentos: 0,
+        totalimpuestos: 0,
+        totaltotal: 0
     };
   },
-    watch: {
-    'items': {
-      handler (newValue) {
+  watch: {
+    items: {
+      handler(newValue) {
         newValue.forEach((item) => {
-          item.subtotal =item.cantidad * item.precio
-        })
+          item.subtotal = item.cantidad * item.precio;
+        });
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
-    methods: {
-    AdicionarItem () {
+
+ computed: {
+        total  () {
+            return this.items.reduce((total,item)=>{
+                return total + item.subtotal; 
+            },0);
+            
+            
+        },
+      /*  descuentos: function () {
+            var tt = 0;
+            $.each(this.rows, function (i, e) {
+                tt += accounting.unformat(e.tdescuentos, ",");
+            });
+            return tt;
+        },
+        Impuestos: function () {
+            var tt = 0;
+            $.each(this.rows, function (i, e) {
+                tt += accounting.unformat(e.timpuestos, ",");
+            });
+            return tt;
+        },
+        total: function () {
+            var tt = 0;
+            $.each(this.rows, function (i, e) {
+                tt += accounting.unformat(e.timpuestos, ",");
+            });
+            return tt;
+        },
+        */
+        
+
+    },
+
+  methods: {
+    AdicionarItem() {
       const codigo = document.getElementById("inpcodigo");
-     // const descripcion = document.getElementById("inpdescripcion");
+      const descripcion = document.getElementById("inpdescripcion");
       const cantidad = document.getElementById("inpcantidad");
       const precio = document.getElementById("inpprecio");
       const dcto = document.getElementById("inpdcto");
-      const iva =document.getElementById("inpiva");
-      const subtotal = (cantidad.value * precio.value)*(dcto.value/100);
-            console.log(subtotal)
-      
-        this.items.push({
-         codigo: codigo.value,
-         descripcion: codigo.value,
-         cantidad: cantidad.value,
-         precio: precio.value,
-         dcto: dcto.value,
-         iva:iva.value,
-         subtotal: subtotal.value
-        });
-        console.log(this.items)
+      const iva = document.getElementById("inpiva");
+      const subtotal = cantidad.value * precio.value * (dcto.value / 100);
+      console.log(subtotal);
+
+      this.items.push({
+        codigo: codigo.value,
+        descripcion: descripcion.value,
+        cantidad: cantidad.value,
+        precio: precio.value,
+        dcto: dcto.value,
+        iva: iva.value,
+        subtotal: subtotal.value,
+      });
+      console.log(this.items);
     },
-    EliminarItem(){
-      this.items.splice(this.items, 1)
+    EliminarItem() {
+      this.items.splice(this.items, 1);
     },
+ 
     async GetProducto() {
       const codigo = document.getElementById("inpcodigo");
       const descripcion = document.getElementById("inpdescripcion");
@@ -481,22 +593,18 @@ export default {
           descripcion.value = datos.data.descripcion;
           precio.value = datos.data.precio;
           iva.value = datos.data.ivaventas;
-         
         } catch (error) {
           this.flashMessage.error({
             title: "Productos",
             message: "Producto No existe" || error,
           });
           console.log(error);
-         
         }
       }
     },
-      async GetCliente() {
+    async GetCliente() {
       const cliente = document.getElementById("inpcliente");
-      const nit =document.getElementById("inpnit");
-     
-      
+      const nit = document.getElementById("inpnit");
 
       console.log(cliente.value);
 
@@ -506,76 +614,55 @@ export default {
           let datos = await axios.get(
             `http://localhost:4000/api/Terceros_nombre/${cliente.value}`
           );
-            console.log(datos);
+          console.log(datos);
 
-          cliente.value=datos.data[0].nombre;
-          nit.value=datos.data[0].nit;
-
-         
+          cliente.value = datos.data[0].nombre;
+          nit.value = datos.data[0].nit;
         } catch (error) {
           this.flashMessage.error({
             title: "Cliente",
             message: "Cliente  No existe" || error,
           });
           console.log(error);
-         
         }
       }
     },
-       async GetBodegas() {
-
-        try {
-          //let filtro='614feaa8649ab9e8feed6cdc'
-          let datos = await axios.get(
-            `http://localhost:4000/api/Bodegas`
-          );
-            console.log(datos);
-             this.bodegas=datos.data;
-
-
-         
-        } catch (error) {
-          this.flashMessage.error({
-            title: "Bodegas",
-            message: "Bodegas No existe" || error,
-          });
-          console.log(error);
-         
-        }
-      
+    async GetBodegas() {
+      try {
+        //let filtro='614feaa8649ab9e8feed6cdc'
+        let datos = await axios.get(`http://localhost:4000/api/Bodegas`);
+        console.log(datos);
+        this.bodegas = datos.data;
+      } catch (error) {
+        this.flashMessage.error({
+          title: "Bodegas",
+          message: "Bodegas No existe" || error,
+        });
+        console.log(error);
+      }
     },
-       async GetTipos() {
-
-        try {
-          //let filtro='614feaa8649ab9e8feed6cdc'
-          let datos = await axios.get(
-            `http://localhost:4000/api/Tipo_documentos`
-          );
-            console.log(datos);
-             this.tipos=datos.data;
-
-
-         
-        } catch (error) {
-          this.flashMessage.error({
-            title: "Tipos",
-            message: "Tipos No existe" || error,
-          });
-          console.log(error);
-         
-        }
-      
-    }
-    
+    async GetTipos() {
+      try {
+        //let filtro='614feaa8649ab9e8feed6cdc'
+        let datos = await axios.get(
+          `http://localhost:4000/api/Tipo_documentos`
+        );
+        console.log(datos);
+        this.tipos = datos.data;
+      } catch (error) {
+        this.flashMessage.error({
+          title: "Tipos",
+          message: "Tipos No existe" || error,
+        });
+        console.log(error);
+      }
+    },
   },
 
-   mounted() {
-    this.GetBodegas(),
-    this.GetTipos()
-}
- 
+  mounted() {
+    this.GetBodegas(), this.GetTipos();
+  },
 };
-
 </script > 
 <style scoped>
 h3 {
