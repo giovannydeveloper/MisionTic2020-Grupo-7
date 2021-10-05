@@ -8,7 +8,8 @@ import Usuarios from './components/Usuarios.vue';
 import Productos from './components/Productos.vue';
 //import Carrito from './components/Carrito.vue';
 import Login from './components/Login.vue';
-import Ventas from './components/Ventas.vue'
+import Ventas from './components/Ventas.vue';
+import Cliente from './components/Cliente.vue';
 
 Vue.use(Router)
 
@@ -42,6 +43,12 @@ export default new Router({
                     name: "Productos",
                     component: Productos
                 },
+                {
+                    path: "/Cliente",
+                    name: "Cliente",
+                    component: Cliente
+                },
+                
                 {
                     path: "/Ventas",
                     name: "Ventas",
