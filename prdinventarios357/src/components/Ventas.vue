@@ -1,3 +1,4 @@
+const newLocal='Ventas'
 <template>
   <div class="container">
     <section class="bg-light pb-0 pt-0">
@@ -5,7 +6,7 @@
         <h2 class="text-center">FACTURA</h2>
         <form>
           <div class="row">
-            <div class="mb-3 col-md-3">
+            <div class="mb-3 col-md-4">
               <span class="input-group-text" id="inputGroup-sizing-sm"
                 >Fecha</span
               >
@@ -30,7 +31,7 @@
               >
 
               <select
-                id="formInput4"
+                id="idforma"
                 class="
                   bg-light
                   border-start-0 border-end-0 border-top-0
@@ -42,7 +43,6 @@
               >
                 <option disabled selected>Contado</option>
                 <option>Crèdito</option>
-                
               </select>
             </div>
             <div class="mb-3 col-md-2"></div>
@@ -88,7 +88,7 @@
                   pe-0
                   rounded-0
                 "
-                id="iptfecha"
+                id="inpnumero"
                 placeholder=""
               />
             </div>
@@ -376,81 +376,95 @@
                       />
                     </td>
                     <td>
-                        
-                      <input type="text"
-                      class="bg-light form-control ps-0 pe-0 rounded-0"
-                       v-model="item.descripcion" />
-                      
+                      <input
+                        type="text"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.descripcion"
+                      />
                     </td>
                     <td>
-                      <input type="number" 
-                      class="bg-light form-control ps-0 pe-0 rounded-0"
-                      v-model="item.cantidad" />
+                      <input
+                        type="number"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.cantidad"
+                      />
                     </td>
                     <td>
-                      <input type="number" 
-                      class="bg-light form-control ps-0 pe-0 rounded-0"
-                      v-model="item.precio" />
+                      <input
+                        type="number"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.precio"
+                      />
                     </td>
                     <td>
-                      <input type="number" 
-                      class="bg-light form-control ps-0 pe-0 rounded-0"
-                      v-model="item.dcto" />
+                      <input
+                        type="number"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.dcto"
+                      />
                     </td>
                     <td>
-                      <input type="number" 
-                      class="bg-light form-control ps-0 pe-0 rounded-0"
-                      v-model="item.iva" />
+                      <input
+                        type="number"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.iva"
+                      />
                     </td>
                     <td>
-                      <input type="number" 
-                      class="bg-light form-control ps-0 pe-0 rounded-0"
-                      v-model="item.subtotal" />
+                      <input
+                        type="number"
+                        class="bg-light form-control ps-0 pe-0 rounded-0"
+                        v-model="item.subtotal"
+                      />
                     </td>
                     <td>
-                      <button class="btn btn-primary btn-xs"
-                      
-                       @click="EliminarItem" >Borrar
-                       </button>
+                      <button
+                        class="btn btn-primary btn-xs"
+                        @click="EliminarItem"
+                      >
+                        Borrar
+                      </button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-              <div class="row">
-            <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm"
-                >Subtotal</span
-              >
-              <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{Subtotal}}</span>
-            </div>
-            <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm"
-                >Descuentos</span
-              >
-             <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{Descuentos}}</span>
-            </div>
-            <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm"
-                >Impuestos</span
-              >
-               <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{Impuestos}}</span>
-            </div>
-            <div class="col-md-2">
-              <span class="input-group-text" id="inputGroup-sizing-sm"
-                >Total</span
-              >
-                       
+          <div class="row">
+            <div class="mb-3 col-md-12">
+              <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm"
-                >{{Total}}</span>
-            </div>
+                  >Subtotal</span
+                >
+                <span class="input-group-text" id="inpsubtotal">{{
+                  Subtotal
+                }}</span>
 
-          
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Descuentos</span
+                >
+                <span class="input-group-text" id="inptotaldcto">{{
+                  Descuentos
+                }}</span>
+
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Impuestos</span
+                >
+                <span class="input-group-text" id="inptotalimpuestos">{{
+                  Impuestos
+                }}</span>
+
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Total</span
+                >
+
+                <span class="input-group-text" id="inptotaltotal">{{
+                  Total
+                }}</span>
+              </div>
+            </div>
           </div>
+
           <div class="mb-3">
             <input type="checkbox" class="form-check-input" id="formInput57" />
             <label class="form-check-label" for="formInput57">Imprimir</label>
@@ -465,6 +479,7 @@
                 rounded-0 rounded-pill
                 text-uppercase
               "
+              @click="ActualizarDocumento()"
             >
               <span class="align-middle">Guardar</span>
               <svg
@@ -487,6 +502,8 @@
 </template>
 <script>
 import axios from "axios";
+import moment from "moment";
+
 export default {
   name: "Venta",
   props: {
@@ -502,55 +519,45 @@ export default {
       items: [],
       bodegas: [],
       tipos: [],
-    
     };
   },
-  
-  watch: {
-    items: {
-      handler(newValue) {
-        newValue.forEach((item) => {
-            const pordcto = ( (item.dcto) / 100);
-          item.subtotal = item.cantidad * item.precio * pordcto;
-        });
-      },
-      deep: true,
+
+  computed: {
+    Subtotal() {
+      return this.items.reduce((total, item) => {
+        return parseFloat(total + item.cantidad * item.precio).toFixed(2);
+      }, 0);
+    },
+    Descuentos() {
+      return this.items.reduce((total, item) => {
+        return parseFloat(
+          total + item.cantidad * item.precio * (item.dcto / 100)
+        ).toFixed(2);
+      }, 0);
+    },
+    Impuestos() {
+      return this.items.reduce((total, item) => {
+        return parseFloat(
+          total +
+            item.cantidad *
+              item.precio *
+              (1 - item.dcto / 100) *
+              (item.iva / 100)
+        ).toFixed(2);
+      }, 0);
+    },
+    Total() {
+      return this.items.reduce((total, item) => {
+        return parseFloat(
+          total +
+            item.cantidad *
+              item.precio *
+              (1 - item.dcto / 100) *
+              (1 + item.iva / 100)
+        ).toFixed(2);
+      }, 0);
     },
   },
-
- computed: {
-        Subtotal  () {
-            return this.items.reduce((total,item)=>{
-                return total + item.subtotal; 
-            },0);
-            
-            
-        },
-        Descuentos  () {
-            return this.items.reduce((total,item)=>{
-                return total + (item.subtotal * (item.dcto/100)); 
-            },0);
-            
-            
-        },
-      Impuestos  () {
-            return this.items.reduce((total,item)=>{
-                return total + ((item.subtotal * (item.dcto/100))*(item.iva/100)); 
-            },0);
-            
-            
-        },
-        Total  () {
-            return this.items.reduce((total,item)=>{
-                return total + ((item.subtotal * (1-(item.dcto/100)))*(1+(item.iva/100))); 
-            },0);
-            
-            
-        },
-      
-        
-
-    },
 
   methods: {
     AdicionarItem() {
@@ -560,34 +567,19 @@ export default {
       const precio = document.getElementById("inpprecio");
       const dcto = document.getElementById("inpdcto");
       const iva = document.getElementById("inpiva");
-     const subtotal=0;
 
-      if (cantidad.value=="")
-      {
-          cantidad.value=1
+      if (cantidad.value == "") {
+        cantidad.value = 1;
       }
-      if (precio.value=="")
-      {
-          precio.value=0
+      if (precio.value == "") {
+        precio.value = 0;
       }
-      if (dcto.value=="")
-      {
-          dcto.value=0
+      if (dcto.value == "") {
+        dcto.value = 0;
       }
-      if (iva.value=="")
-      {
-          iva.value=0
-      }
-   /*   const pordcto = ( (dcto.value) / 100);
-      const subtotal= cantidad.value * precio.value  *  pordcto.toFixed(2);
-      console.log(pordcto);
-      console.log((cantidad.value * precio.value) );
-      console.log((dcto.value / 100));
-      
 
-      
-      console.log(subtotal);
-*/
+      const subtotal = 0;
+
       this.items.push({
         codigo: codigo.value,
         descripcion: descripcion.value,
@@ -595,22 +587,19 @@ export default {
         precio: precio.value,
         dcto: dcto.value,
         iva: iva.value,
-        subtotal: subtotal.value,
+        subtotal: subtotal,
       });
-      console.log(this.items);
     },
     EliminarItem() {
       this.items.splice(this.items, 1);
     },
- 
+
     async GetProducto() {
       const codigo = document.getElementById("inpcodigo");
       const descripcion = document.getElementById("inpdescripcion");
       const precio = document.getElementById("inpprecio");
       const iva = document.getElementById("inpiva");
       //const inpcodigoconsulta = document.getElementById("inpBodConsulta");
-
-      console.log(codigo.value);
 
       if (codigo.value) {
         try {
@@ -687,7 +676,88 @@ export default {
         console.log(error);
       }
     },
+  async  ActualizarDocumento() {
+      //const fecha ="" //document.getElementById("idfecha");
+      const bodega = document.getElementById("selbodega");
+      const documento = document.getElementById("seldocumento");
+      const numero = document.getElementById("inpnumero");
+      const nit = document.getElementById("inpnit");
+      const condicion = document.getElementById("idforma");
+
+      if (numero.value == "") {
+        numero.value = 1;
+      }
+      const fecha = moment(String(this.date)).format("DD-MM-YYYY");
+      //const ID=0;
+
+      const Nuevodocumento = {
+        idtipo: documento.value,
+        idbodega: bodega.value,
+        idtercero: nit.value,
+        numero: numero.value,
+        fecha: fecha,
+        docproveedor: "",
+        condicionpago: condicion.value,
+
+        totalsub: this.Subtotal,
+        totaldcto: this.Descuentos,
+        totalimpuestos: this.Impuestos,
+        total: this.Total,
+      };
+      console.log(Nuevodocumento);
+    
+      let keys = Object.keys(this.items);
+      let i=0;
+      let arr = [];
+
+      
+      try { 
+          
+          let datos = await axios.post(
+          "http://localhost:4000/api/Documentos_Enca-nuevo",
+          Nuevodocumento
+        );
+        let ID=0;
+        ID = datos.data._id;
+        console.log(ID)     
+                     keys.forEach(key => {
+                let item = this.items[key];
+                    item;
+                         arr.push({
+                            codigo: this.items[i].codigo,
+                            descripcion: this.items[i].descripcion,
+                            cantidad: this.items[i].cantidad,
+                            precio: this.items[i].precio,
+                            dcto: this.items[i].dcto,
+                            iva: this.items[i].iva,
+                            subtotal: this.items[i].subtotal,
+                            iddocenc : ID
+                        });
+                   
+                    i++;       
+                })
+            console.log(arr);
+        let datosdet = await axios.post(
+          "http://localhost:4000/api/Documentos_Det-nuevo",
+          arr
+        );
+                ID = datosdet.data._id;
+                console.log(ID)  
+           this.flashMessage.info({
+          title: "Documento",
+          message: "Documento almacenado con exito" || error,
+        });
+      } catch (error) {
+        this.flashMessage.error({
+          title: "Documento",
+          message: "Error al actualizar documento" || error,
+        });
+        console.log(error);
+      }
+    },
   },
+
+    
 
   mounted() {
     this.GetBodegas(), this.GetTipos();
