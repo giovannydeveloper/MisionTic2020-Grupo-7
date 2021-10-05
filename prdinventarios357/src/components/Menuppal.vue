@@ -19,16 +19,7 @@ const newLocal='Menuppal'
 
         <div class="collapse navbar-collapse" id="navbarToggler42">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-             <a class="nav-link active" href="#">
-                    <router-link  to="/Login" class="nav-item nav-link">
-             
-               Login
-            
-                </router-link>
-
-              </a>
-            </li>
+           
             <li class="nav-item">
              <a class="nav-link active" href="#">
                     <router-link  to="/Inicio" class="nav-item nav-link">
@@ -39,6 +30,17 @@ const newLocal='Menuppal'
 
               </a>
             </li>
+            <li class="nav-item">
+             <a class="nav-link active" href="#">
+                    <router-link  to="/Login" class="nav-item nav-link">
+             
+               Login
+            
+                </router-link>
+
+              </a>
+            </li>
+           
             <li class="nav-item">
               <a class="nav-link active" href="#">
                     <router-link  to="/Usuarios" class="nav-item nav-link">
@@ -70,13 +72,10 @@ const newLocal='Menuppal'
                 </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Compras</a>
-            </li>
               <a class="nav-link active" href="#">
                     <router-link  to="/Ventas" class="nav-item nav-link">
              
-               Ventas
+               Documentos
             
                 </router-link>
                 </a>
@@ -84,7 +83,7 @@ const newLocal='Menuppal'
             <a class="nav-link active" href="#">
                     <router-link  to="/Carrito" class="nav-item nav-link">
              
-               Carrito
+               ...
             
                 </router-link>
                 </a>

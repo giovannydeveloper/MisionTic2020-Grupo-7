@@ -3,7 +3,7 @@ const newLocal='Ventas'
   <div class="container">
     <section class="bg-light pb-0 pt-0">
       <div class="container pb-5 pt-0">
-        <h2 class="text-center">FACTURA</h2>
+        <h2 class="text-center">DOCUMENTOS</h2>
         <form>
           <div class="row">
             <div class="mb-3 col-md-4">
@@ -578,7 +578,9 @@ export default {
         dcto.value = 0;
       }
 
-      const subtotal = 0;
+      const subtotal = cantidad.value *
+              precio.value *
+              (1 - dcto.value / 100) ;
 
       this.items.push({
         codigo: codigo.value,
@@ -745,12 +747,12 @@ export default {
                 console.log(ID)  
            this.flashMessage.info({
           title: "Documento",
-          message: "Documento almacenado con exito" || error,
+          message: "Documento almacenado con exito" ,
         });
       } catch (error) {
         this.flashMessage.error({
           title: "Documento",
-          message: "Error al actualizar documento" || error,
+          message: "Error al actualizar documento" ,
         });
         console.log(error);
       }
