@@ -22,13 +22,21 @@ const newLocal='Menuppal'
            
             <li class="nav-item">
              <a class="nav-link active" href="#">
-                    <router-link  to="/Inicio" class="nav-item nav-link">
+                    <router-link  to="/" class="nav-item nav-link">
              
                Inicio
             
                 </router-link>
 
               </a>
+            </li>
+            <li>
+              <span v-if="isLoggedIn">
+                      <a @click="logout">Logout</a>
+              </span>
+               <span v-else>
+                    <router-link to="/Login">Ingreso</router-link>
+              </span>
             </li>
             <li class="nav-item">
              <a class="nav-link active" href="#">
@@ -118,11 +126,27 @@ const newLocal='Menuppal'
  
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "Menuppal",
   props: {
     msg: String,
   },
+  computed : {
+      isLoggedIn : function(){ return this.$store.getters.isAuthenticated}
+    },
+    methods: {
+
+      ...mapActions(["LogOut"]),
+      async logout (){
+          await this.$store.commit('LogOut')
+       // await this.$store.dispatch('LogOut')
+        this.$router.push('/Login')
+      }
+       
+    
+  
+    },
 };
 </script > 
 <style scoped>

@@ -5,10 +5,12 @@ const Usuario = require('../models/usuario');
 // Crear usuario
 router.post ('/usuario-nuevo', async (req, res ) =>{
      const body = req.body;
+    
      try {
          const usuairobd = await  Usuario.create(body);
          res.status(200).json(usuairobd);
      } catch (err) {
+       
          return res.status(500).json(
              {
                  mensaje : err.message || 'No fue posible actualizar',
@@ -19,7 +21,30 @@ router.post ('/usuario-nuevo', async (req, res ) =>{
      }
 
 });
+router.post ('/usuario-login', async (req, res ) =>{
+    const body = req.body;
+    console.log(body);
+    try {
+        const usuairobd = await  Usuario.find( 
+            {
+            codigo : {'$regex' : body.username},
+            clave  : {'$regex' : body.password}
+            }
+        );
+        res.status(200).json(usuairobd);
+ 
+    } catch (err) {
+        console.log(err.message);
+        return res.status(500).json(
+            {
+                mensaje : err.message || 'No fue posible actualizar',
+                err
+            }
+        )
+        
+    }
 
+});
 // Get con parámetros usuario
 router.get('/usuario/:codigo', async(req, res) => {
     const codigo = req.params.codigo;
