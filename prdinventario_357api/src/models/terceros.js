@@ -13,11 +13,8 @@ const terceroSchema = new Schema({
     telefono: String,
     telefono2: String,
     movil: String,
-    estado: {
-        type: Boolean,
-        default: true
-    },
-    tipotercero: Number
+    estado: String,
+    tipotercero: String
 
 });
 const tercero = mongoose.model('Terceros', terceroSchema);

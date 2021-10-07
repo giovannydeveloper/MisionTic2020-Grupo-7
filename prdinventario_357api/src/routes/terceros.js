@@ -22,12 +22,14 @@ router.post ('/Terceros-nuevo', async (req, res ) =>{
 });
 
 // Get con parámetros
-router.get('/Terceros/:id', async(req, res) => {
+router.get('/Terceros-id/:id', async(req, res) => {
     const _id = req.params.id;
+    console.log(_id);
     try {
     const tercerodb = await Terceros.findOne({_id});
     res.json(tercerodb);
     } catch (err) {
+      
     return res.status(400).json({
                     mensaje: err.message ||  'Ocurrio un error',
     err
@@ -37,12 +39,15 @@ router.get('/Terceros/:id', async(req, res) => {
 // Get con parámetros nombre
 router.get('/Terceros_nombre/:nombre', async(req, res) => {
     const nombre = req.params.nombre;
+    console.log(nombre);
     try {
     const tercerodb = await Terceros.find(
         {
         $or : [
         {nombre : {'$regex' : nombre}},
-        {nit: {'$regex' : nombre}},
+        {nit: {'$regex' : nombre}}
+        
+        
         ]
     
     }); 
@@ -55,6 +60,38 @@ router.get('/Terceros_nombre/:nombre', async(req, res) => {
     }
 });
 
+router.post ('/Terceros_buscar', async (req, res ) =>{
+    
+      const body = req.body;
+      
+      try {
+        console.log(body.filtro);
+          const tercerodb = await  Terceros.find( 
+            {
+                $or : [
+                {nombre : {'$regex' : body.filtro}},
+                {nit: {'$regex' : body.filtro}},
+               // {codigo: {'$regex' : body.filtro}}        
+                
+                ]
+            }
+              
+          );
+        console.log(tercerodb);
+          res.status(200).json(tercerodb);
+   
+      } catch (err) {
+      
+          return res.status(500).json(
+              {
+                  mensaje : err.message || 'No fue posible consultar',
+                  err
+              }
+          )
+          
+      }
+  
+  });
 // Get con todos los tercero
 router.get('/Terceros', async (req, res) => {
     try {
@@ -91,9 +128,9 @@ router.get('/Terceros', async (req, res) => {
        }
    });
    // Put actualizar una nota
-   router.put('/Terceros/:id', async (req, res) => {
-       const _id = req.params.id;
-       const body = req.body;
+   router.put('/Terceros-actualizar', async (req, res) => {
+    const _id = req.body.id;
+    const body = req.body; 
        try {
            const tercerodb = await Terceros.findByIdAndUpdate(
                _id,

@@ -12,8 +12,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //app.use(methOverrides('_method'));
 
+
 //app.use(express.static(path.join(__dirname, 'public')));
+
 // Rutas
+
 app.use('/api', require('./src/routes/usuario'));
 app.use('/api', require('./src/routes/categorias'));
 app.use('/api', require('./src/routes/productos'));
@@ -22,6 +25,7 @@ app.use('/api', require('./src/routes/documentosenca'));
 app.use('/api', require('./src/routes/documentosdet'));
 app.use('/api', require('./src/routes/bodegas'));
 app.use('/api', require('./src/routes/tiposdocumentos'));
+
 
 
 

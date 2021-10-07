@@ -80,15 +80,7 @@ const newLocal='Menuppal'
                 </router-link>
                 </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                    <router-link  to="/Cliente" class="nav-item nav-link">
-             
-               Clientes
-            
-                </router-link>
-                </a>
-            </li>
+          
               <li class="nav-item">
               <a class="nav-link active" href="#">
                     <router-link  to="/Tercero" class="nav-item nav-link">

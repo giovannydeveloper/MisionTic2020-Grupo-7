@@ -18,7 +18,7 @@ router.post ('/usuario-nuevo', async (req, res ) =>{
              }
          )
          
-     }
+     } 
 
 });
 router.post ('/usuario-login', async (req, res ) =>{
