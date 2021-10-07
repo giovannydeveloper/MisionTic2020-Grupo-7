@@ -38,6 +38,7 @@ const newLocal='Menuppal'
                     <router-link to="/Login">Ingreso</router-link>
               </span>
             </li>
+            <!--
             <li class="nav-item">
              <a class="nav-link active" href="#">
                     <router-link  to="/Login" class="nav-item nav-link">
@@ -48,7 +49,7 @@ const newLocal='Menuppal'
 
               </a>
             </li>
-           
+           -->
             <li class="nav-item">
               <a class="nav-link active" href="#">
                     <router-link  to="/Usuarios" class="nav-item nav-link">

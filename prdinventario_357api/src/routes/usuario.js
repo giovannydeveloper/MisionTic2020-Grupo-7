@@ -25,8 +25,6 @@ router.post ('/usuario-login', async (req, res ) =>{
   //  console.log(req);
     const body = req.body;
     
-    console.log(body.clave);
-    console.log(body.codigo);
     try {
         const usuairobd = await  Usuario.find( 
             {
@@ -34,11 +32,11 @@ router.post ('/usuario-login', async (req, res ) =>{
             clave  : {'$regex' : body.clave}
             }
         );
-        console.log(usuairobd);
+      //console.log(usuairobd);
         res.status(200).json(usuairobd);
  
     } catch (err) {
-        console.log(err.message);
+    
         return res.status(500).json(
             {
                 mensaje : err.message || 'No fue posible actualizar',
