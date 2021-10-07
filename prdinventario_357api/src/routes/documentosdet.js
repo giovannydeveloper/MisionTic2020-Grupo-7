@@ -20,7 +20,7 @@ router.post ('/Documentos_Det-nuevo', async (req, res ) =>{
              }
              
          )
-        
+         
          
      }
 

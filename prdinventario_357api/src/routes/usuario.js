@@ -22,16 +22,48 @@ router.post ('/usuario-nuevo', async (req, res ) =>{
 
 });
 router.post ('/usuario-login', async (req, res ) =>{
+  //  console.log(req);
     const body = req.body;
-    console.log(body);
+    
+    console.log(body.clave);
+    console.log(body.codigo);
     try {
         const usuairobd = await  Usuario.find( 
             {
-            codigo : {'$regex' : body.username},
-            clave  : {'$regex' : body.password}
+            codigo : {'$regex' : body.codigo},
+            clave  : {'$regex' : body.clave}
             }
         );
+        console.log(usuairobd);
         res.status(200).json(usuairobd);
+ 
+    } catch (err) {
+        console.log(err.message);
+        return res.status(500).json(
+            {
+                mensaje : err.message || 'No fue posible actualizar',
+                err
+            }
+        )
+        
+    }
+
+});
+router.get('/usuario-login2/:usuario&:clave', async (req, res ) =>{
+    console.log(req);
+    const codigo = req.params.codigo;
+    const clave = req.params.clave;
+    
+    console.log(body.username);
+    
+    try {
+        const usuairobd = await  Usuario.find( 
+            {
+            codigo : {'$regex' : codigo},
+            clave  : {'$regex' :clave}
+            }
+        ); 
+        res.json(usuairobd);
  
     } catch (err) {
         console.log(err.message);

@@ -3,7 +3,9 @@ const newLocal='Login'
 <div class="mb-2 col-md-6">
   <div class="container">
      <section class="bg-light pb-5 pt-5">
-    <form class="form-signin" @submit.prevent="submit">
+    <form class="form-signin" @submit.prevent="submit" id="form"> 
+    
+
       <img
         class="mb-4"
         src="https://cdn4.vectorstock.com/i/1000x1000/89/13/user-login-icon-vector-21078913.jpg"
@@ -17,21 +19,23 @@ const newLocal='Login'
       <label for="inputEmail" class="sr-only">Email address</label>
       <input
         type="text"
-        id="inputEmail"
+        id="Email"
         class="form-control"
         placeholder="Email - Código"
         required
         autofocus
-        v-model="form.username"
+        name="username" 
+       
       />
       <label for="inputPassword" class="sr-only">Clave</label>
       <input
         type="password"
-        id="inputPassword"
+        id="Password"
         class="form-control"
         placeholder="Clave.."
         required
-        v-model="form.password"
+        name="password"
+    
       />
       <div class="checkbox mb-3">
         <label>
@@ -40,8 +44,20 @@ const newLocal='Login'
       </div>
      <!-- <button class="btn btn-lg btn-primary btn-block" type="submit" @click="login()">
         Ingresar
+         type="submit"
       </button>-->
-         <button type="submit">Submit</button>
+         <button
+         
+         type="submit"
+                class="
+                  btn btn-primary
+                  ps-4
+                  pe-2
+                  rounded-0 rounded-pill
+                  text-uppercase
+                "
+              
+         >Ingresar</button>
       <p class="mt-5 mb-3 text-muted">2021</p>
     </form>
      </section>
@@ -58,32 +74,42 @@ export default {
   },  
   data() {
     return {
-      form: {
+   /*   form: {
         username: "",
         password: "",
       },
-      showError: false
+*/      showError: false
     };
   },
   methods: {
     ...mapActions(["LogIn"]),
     async submit() {
-      const User = new FormData();
-      User.append("username", this.form.username);
-      User.append("password", this.form.password);
+     
+     
       
-      /*const fusername= document.getElementById("inputEmail");
-      const fpassword = document.getElementById("inputPassword");
-      const User = {
-                    username : fusername.value,
-                    password : fpassword.value
-                    };
-
-      */
 
       try {
+          //var FormData = require('form-data');
+       // var fs = require('fs');
+
+        //var data = new FormData();
+          //     const data = new FormData();
+        const codigo = document.getElementById("Email");
+      const clave = document.getElementById("Password");
+ 
+       
+      const Nuevousuario = {
+        codigo: codigo.value,
+        clave: clave.value,
+        
+      };
+  
+   console.log(Nuevousuario)
+     // Usuario.append("username", fusername);
+      //1|Usuario.append("password", fpassword); 
          
-          await this.LogIn(User);
+          var rtp= await this.LogIn(Nuevousuario);
+          console.log(rtp);
           this.$router.push("Ventas");
           this.showError = false
       } catch (error) {
@@ -92,6 +118,7 @@ export default {
       }
     },
   },
+
 };
 </script > 
 <style scoped>

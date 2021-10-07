@@ -15,10 +15,15 @@ const actions = {
         await dispatch('Login', UserForm)
       },
       async LogIn({commit}, User) {
-         console.log(User) ;
+    
+    
         //await axios.post('login', User)
+        //await axios.post(ENDPOINT_PATH, User)
         await axios.post(ENDPOINT_PATH, User)
-        await commit('setUser', User.get('username'))
+
+        
+        await commit('setUser',User)
+
       },
    
       async LogOut({commit}){
