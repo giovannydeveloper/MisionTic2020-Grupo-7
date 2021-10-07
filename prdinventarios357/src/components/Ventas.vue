@@ -4,7 +4,7 @@ const newLocal='Ventas'
     <section class="bg-light pb-0 pt-0">
       <div class="container pb-5 pt-0">
         <h2 class="text-center">DOCUMENTOS</h2>
-        <form>
+        <form @submit.prevent="submit" id="form">
           <div class="row">
             <div class="mb-3 col-md-4">
               <span class="input-group-text" id="inputGroup-sizing-sm"

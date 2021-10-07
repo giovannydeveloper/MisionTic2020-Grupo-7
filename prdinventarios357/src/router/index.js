@@ -11,7 +11,7 @@ import Productos from '../components/Productos.vue';
 import Login from '../components/Login.vue';
 import Ventas from '../components/Ventas.vue';
 import Cliente from '../components/Cliente.vue';
-
+import Tercero from '../components/Tercero.vue';
 Vue.use(VueRouter)
 
 const routes = [
@@ -59,7 +59,12 @@ const routes = [
                     component: Cliente,
                     meta: {requiresAuth: true},
                 },
-                
+                {
+                  path: "/Tercero",
+                  name: "Tercero",
+                  component: Tercero,
+                  meta: { guest: true },
+              },
                 {
                     path: "/Ventas",
                     name: "Ventas",

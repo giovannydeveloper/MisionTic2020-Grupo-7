@@ -11,7 +11,7 @@ const newLocal='Categorias'
     <div class="container"></div>
     <section class="bg-light pb-5 pt-5">
       <div class="container pb-2 pt-0">
-        <form>
+        <form @submit.prevent="submit" id="form">
           <div class="row">
             <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
             <input

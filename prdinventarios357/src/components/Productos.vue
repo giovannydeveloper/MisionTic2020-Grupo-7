@@ -7,7 +7,7 @@
             <b-tabs card vertical>
               <b-tab title="Datos Basicos" active>
                 <div class="container" id="Basicos">
-                  <form>
+                  <form @submit.prevent="submit" id="form">
                     <div class="row">
                       <div class="mb-3 col-md-6">
                         <label class="form-label" for="iptcodigo">ID</label>

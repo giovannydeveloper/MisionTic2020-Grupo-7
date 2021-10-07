@@ -96,7 +96,7 @@ export default {
         if (rtp.data.length == 0 )
         {
            
-        this.flashMessage.info({
+        this.flashMessage.error({
           title: "Usuarios",
           message: "Usuarios o Clave no valido ",
 
