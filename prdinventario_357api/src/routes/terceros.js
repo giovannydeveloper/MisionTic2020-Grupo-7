@@ -65,7 +65,7 @@ router.post ('/Terceros_buscar', async (req, res ) =>{
       const body = req.body;
       
       try {
-        console.log(body.filtro);
+       
           const tercerodb = await  Terceros.find( 
             {
                 $or : [
@@ -77,7 +77,7 @@ router.post ('/Terceros_buscar', async (req, res ) =>{
             }
               
           );
-        console.log(tercerodb);
+      
           res.status(200).json(tercerodb);
    
       } catch (err) {
