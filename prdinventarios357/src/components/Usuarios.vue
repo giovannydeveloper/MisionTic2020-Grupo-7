@@ -251,7 +251,8 @@ export default {
         try {
           //let filtro='614feaa8649ab9e8feed6cdc'
           let datos = await axios.get(
-            `http://localhost:4000/api/usuario/${filtro}`
+            //`http://localhost:4000/api/usuario/${filtro}`
+            `https://rocky-shelf-58294.herokuapp.com/api/usuario/${filtro}`
           );
           console.log(datos);
 
@@ -296,7 +297,8 @@ export default {
       console.log(Nuevousuario);
       try {
         let datos = await axios.post(
-          "http://localhost:4000/api/usuario-nuevo",
+          //"http://localhost:4000/api/usuario-nuevo",
+            "https://rocky-shelf-58294.herokuapp.com/api/usuario-nuevo",
           Nuevousuario
         );
         ID.value = datos.data._id;
@@ -315,24 +317,23 @@ export default {
       }
     },
     async DelUsuario() {
-      //let resultadoElemento =document.getElementById("getResult");
-      //resultadoElemento.innerHTML="";
-
+      
+      
       const filtro = document.getElementById("inpID").value;
 
-      // const desadi = document.getElementById("inpDesadi");
+      
 
       console.log(filtro);
       try {
         let datos = await axios.delete(
-          `http://localhost:4000/api/usuario/${filtro}`
+          //`http://localhost:4000/api/usuario/${filtro}`
+            `https://rocky-shelf-58294.herokuapp.com/api/usuario/${filtro}`
         );
         this.flashMessage.info({
           title: "Borrado Usuarios",
-          message: "Usuarios Borrado con éxito",
+          message: "Usuarios Borrado con éxito" || datos._id,
         });
-        console.log(datos);
-        //desadi.value="Nuevo Usuario creado" + datos.data.Idusuario;
+      
       } catch (error) {
         this.flashMessage.error({
           title: "Borrado de Usuarios",
@@ -362,7 +363,8 @@ export default {
       console.log(Actualizarusuario);
       try {
         let datos = await axios.put(
-          "http://localhost:4000/api/usuario_actualizar",
+          //"http://localhost:4000/api/usuario_actualizar",
+          "https://rocky-shelf-58294.herokuapp.com/api/usuario_actualizar",
           Actualizarusuario
         );
         ID.value = datos.data._id;

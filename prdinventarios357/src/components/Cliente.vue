@@ -258,11 +258,10 @@ export default {
       const DesAdi = document.getElementById("inpDesadi");
       const ID = document.getElementById("inpID");
 
-      console.log(ID.value);
-      //  let NombreElemento =document.getElementById("inputLastName");
+      
       if (filtro) {
         try {
-          //let filtro='614feaa8649ab9e8feed6cdc'
+          
           let datos = await axios.get(
             `http://localhost:4000/api/usuario/${filtro}`
           );

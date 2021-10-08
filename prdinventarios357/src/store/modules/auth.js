@@ -5,7 +5,9 @@ const state = {
     posts: null,
 };
 
-const ENDPOINT_PATH = "http://localhost:4000/api/usuario-login";
+//const ENDPOINT_PATH = "http://localhost:4000/api/usuario-login";
+const ENDPOINT_PATH = "https://rocky-shelf-58294.herokuapp.com/api/usuario-login";
+
 const actions = {
     async Register({dispatch}, form) {
         await axios.post('Usuarios', form)

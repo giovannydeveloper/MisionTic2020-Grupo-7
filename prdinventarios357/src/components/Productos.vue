@@ -529,7 +529,8 @@ export default {
         try {
           //let filtro='614feaa8649ab9e8feed6cdc'
           let datos = await axios.get(
-            `http://localhost:4000/api/Productos/${codigo.value}`
+            //`http://localhost:4000/api/Productos/${codigo.value}`
+            `https://rocky-shelf-58294.herokuapp.com/api/Productos/${codigo.value}`
           );
 
           codigo.value = datos.data.codigo;
@@ -632,7 +633,8 @@ export default {
       console.log(ActualizaProducto);
       try {
         let datos = await axios.post(
-          "http://localhost:4000/api/Productos-nuevo",
+          //"http://localhost:4000/api/Productos-nuevo",
+          "https://rocky-shelf-58294.herokuapp.com/api/Productos-nuevo",
           ActualizaProducto
         );
         ID.value = datos.data._id;
@@ -677,7 +679,8 @@ export default {
       console.log(filtro);
       try {
         let datos = await axios.delete(
-          `http://localhost:4000/api/Productos/${filtro}`
+          //`http://localhost:4000/api/Productos/${filtro}`
+          `https://rocky-shelf-58294.herokuapp.com/api/Productos/${filtro}`
         );
         this.flashMessage.info({
           title: "Borrado Productos",
@@ -757,7 +760,8 @@ export default {
       console.log(ActualizaProducto);
       try {
         let datos = await axios.put(
-          "http://localhost:4000/api/Producto-actualizar",
+          //"http://localhost:4000/api/Producto-actualizar",
+            "https://rocky-shelf-58294.herokuapp.com/api/Producto-actualizar",
           ActualizaProducto
         );
         ID.value = datos.data._id;

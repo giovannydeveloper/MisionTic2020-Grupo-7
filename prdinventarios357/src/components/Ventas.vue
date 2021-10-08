@@ -607,7 +607,9 @@ export default {
         try {
           //let filtro='614feaa8649ab9e8feed6cdc'
           let datos = await axios.get(
-            `http://localhost:4000/api/Productos/${codigo.value}`
+            //`http://localhost:4000/api/Productos/${codigo.value}`
+            `https://rocky-shelf-58294.herokuapp.com/api/Productos/${codigo.value}`
+            
           );
 
           codigo.value = datos.data.codigo;
@@ -633,7 +635,8 @@ export default {
         try {
           //let filtro='614feaa8649ab9e8feed6cdc'
           let datos = await axios.get(
-            `http://localhost:4000/api/Terceros_nombre/${cliente.value}`
+            //`http://localhost:4000/api/Terceros_nombre/${cliente.value}`
+            `https://rocky-shelf-58294.herokuapp.com/api/Terceros_nombre/${cliente.value}`
           );
           console.log(datos);
 
@@ -650,9 +653,10 @@ export default {
     },
     async GetBodegas() {
       try {
-        //let filtro='614feaa8649ab9e8feed6cdc'
-        let datos = await axios.get(`http://localhost:4000/api/Bodegas`);
-        console.log(datos);
+        
+        //let datos = await axios.get(`http://localhost:4000/api/Bodegas`);
+        let datos = await axios.get(`https://rocky-shelf-58294.herokuapp.com/api/Bodegas`);
+        
         this.bodegas = datos.data;
       } catch (error) {
         this.flashMessage.error({
@@ -665,10 +669,9 @@ export default {
     async GetTipos() {
       try {
         //let filtro='614feaa8649ab9e8feed6cdc'
-        let datos = await axios.get(
-          `http://localhost:4000/api/Tipo_documentos`
-        );
-        console.log(datos);
+        //let datos = await axios.get( `http://localhost:4000/api/Tipo_documentos`);
+        let datos = await axios.get( `https://rocky-shelf-58294.herokuapp.com/api/Tipo_documentos`);
+        
         this.tipos = datos.data;
       } catch (error) {
         this.flashMessage.error({
@@ -716,7 +719,8 @@ export default {
       try { 
           
           let datos = await axios.post(
-          "http://localhost:4000/api/Documentos_Enca-nuevo",
+          //"http://localhost:4000/api/Documentos_Enca-nuevo",
+           "https://rocky-shelf-58294.herokuapp.com/api/Documentos_Enca-nuevo",
           Nuevodocumento
         );
         let ID=0;
@@ -740,7 +744,8 @@ export default {
                 })
             console.log(arr);
         let datosdet = await axios.post(
-          "http://localhost:4000/api/Documentos_Det-nuevo",
+          //"http://localhost:4000/api/Documentos_Det-nuevo",
+          "https://rocky-shelf-58294.herokuapp.com/api/Documentos_Det-nuevo",
           arr
         );
                 ID = datosdet.data._id;
@@ -775,3 +780,4 @@ h1 {
   margin: 40px 0 0;
 }
 </style> 
+

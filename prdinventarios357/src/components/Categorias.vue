@@ -229,20 +229,21 @@ export default {
  
   methods: {
     async GetCategoria() {
-      //let resultadoElemento =document.getElementById("getResult");
-      //resultadoElemento.innerHTML="";
-
+      
       const codigo = document.getElementById("inpcodigo");
       const descripcion = document.getElementById("inpdescripcion");
       const ID = document.getElementById("inpID");
 
       console.log(codigo.value);
-      //  let NombreElemento =document.getElementById("inputLastName");
+      
       if (codigo.value) {
         try {
-          //let filtro='614feaa8649ab9e8feed6cdc'
+          
           let datos = await axios.get(
-            `http://localhost:4000/api/categorias/${codigo.value}`
+            //`http://localhost:4000/api/categorias/${codigo.value}`
+            `https://rocky-shelf-58294.herokuapp.com/api/categorias/${codigo.value}`
+            
+
           );
           console.log(datos);
 
@@ -281,7 +282,8 @@ export default {
       console.log(Nuevacategoria);
       try {
         let datos = await axios.post(
-          "http://localhost:4000/api/Categorias-nuevo",
+          //"http://localhost:4000/api/Categorias-nuevo",
+          "https://rocky-shelf-58294.herokuapp.com/api/Categorias-nuevo"  ,        
           Nuevacategoria
         );
         ID.value = datos.data._id;
@@ -311,7 +313,9 @@ export default {
       console.log(filtro);
       try {
         let datos = await axios.delete(
-          `http://localhost:4000/api/Categorias/${filtro}`
+          //`http://localhost:4000/api/Categorias/${filtro}`
+          `https://rocky-shelf-58294.herokuapp.com/api/Categorias/${filtro}`
+
         );
         this.flashMessage.info({
           title: "Borrado Categorias",
@@ -345,7 +349,8 @@ export default {
       console.log(Actualizacategoria);
       try {
         let datos = await axios.put(
-          "http://localhost:4000/api/Categorias-actualizar",
+          //"http://localhost:4000/api/Categorias-actualizar",
+          "https://rocky-shelf-58294.herokuapp.com/api/Categorias-actualizar",
           Actualizacategoria
         );
         ID.value = datos.data._id;
@@ -371,7 +376,8 @@ export default {
         try {
           //let filtro='614feaa8649ab9e8feed6cdc'
           let datos = await axios.get(
-            "http://localhost:4000/api/categorias/"
+            //"http://localhost:4000/api/categorias/"
+            "https://rocky-shelf-58294.herokuapp.com/api/categorias/"
           );
           console.log(datos);
           this.TodasCategorias=datos.data;

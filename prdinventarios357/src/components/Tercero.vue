@@ -315,7 +315,8 @@ export default {
       if (nit.value) {
         try {
           let datos = await axios.post(
-            "http://localhost:4000/api/Terceros_buscar",
+            //"http://localhost:4000/api/Terceros_buscar",
+            "https://rocky-shelf-58294.herokuapp.com/api/Terceros_buscar",
             Clienteconsulta
           );
 
@@ -381,7 +382,8 @@ export default {
       console.log(Nuevocliente);
       try {
         let datos = await axios.post(
-          "http://localhost:4000/api/Terceros-nuevo",
+          //"http://localhost:4000/api/Terceros-nuevo",
+          "https://rocky-shelf-58294.herokuapp.com/api/Terceros-nuevo",
           Nuevocliente
         );
         ID.value = datos.data._id;
@@ -428,7 +430,8 @@ export default {
       console.log(filtro);
       try {
         let datos = await axios.delete(
-          `http://localhost:4000/api/Terceros/${filtro}`
+          //`http://localhost:4000/api/Terceros/${filtro}`
+          `https://rocky-shelf-58294.herokuapp.com/api/Terceros/${filtro}`
         );
         this.flashMessage.info({
           title: "Borrado Cliente",
@@ -482,7 +485,8 @@ export default {
       console.log(Actualizarcliente);
       try {
         let datos = await axios.put(
-          "http://localhost:4000/api/Terceros-actualizar",
+          //"http://localhost:4000/api/Terceros-actualizar",
+          "https://rocky-shelf-58294.herokuapp.com/api/Terceros-actualizar",
           Actualizarcliente
         );
         ID.value = datos.data._id;
