@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "devbabel": "nodemon main.js --exec babel-node"
+    "devbabel": "nodemon main.js --exec babel-node",
+    "start": "node index.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
