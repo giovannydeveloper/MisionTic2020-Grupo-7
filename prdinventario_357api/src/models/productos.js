@@ -6,7 +6,7 @@ const Schema =mongoose.Schema;
 const productoSchema = new Schema({
     codigo: {
         type: String,
-        require: [true, "Código de usuario"]
+        require: [true, "Código de producto"]
     },
     descripcion: String,
     precio: {
@@ -34,7 +34,7 @@ const productoSchema = new Schema({
     idbodegafija: {
         type: Number
     },
-    cotocompra: {
+    costocompra: {
         type: Number
     },
     costoemergencia: {

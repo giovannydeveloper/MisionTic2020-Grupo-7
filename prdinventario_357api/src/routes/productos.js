@@ -9,8 +9,10 @@ router.post ('/Productos-nuevo', async (req, res ) =>{
      try {
          const productodb = await  Productos.create(body);
          res.status(200).json(productodb);
+
      } catch (err) {
-         return res.status(500).json(
+        console.log(err); 
+        return res.status(500).json(
              {
                  mensaje : err.message || 'No fue posible actualizar',
                  err
@@ -22,10 +24,10 @@ router.post ('/Productos-nuevo', async (req, res ) =>{
 });
 
 // Get con parámetros
-router.get('/Productos/:id', async(req, res) => {
-    const _id = req.params.id;
+router.get('/Productos/:codigo', async(req, res) => {
+    const codigo = req.params.codigo;
     try {
-    const productodb = await Productos.findOne({_id});
+    const productodb = await Productos.findOne({codigo});
     res.json(productodb);
     } catch (err) {
     return res.status(400).json({
@@ -70,8 +72,8 @@ router.get('/Productos', async (req, res) => {
        }
    });
    // Put actualizar una nota
-   router.put('/Productos/:id', async (req, res) => {
-       const _id = req.params.id;
+   router.put('/Producto-actualizar', async (req, res) => {
+       const _id = req.body.id;
        const body = req.body;
        try {
            const productodb = await Productos.findByIdAndUpdate(

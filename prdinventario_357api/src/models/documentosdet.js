@@ -1,22 +1,23 @@
-import mongoose from mongoose;
+
+const  mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const docdetSchema = new Schema({
     
-    idtipo : { type : Number},
-    iddocenc  :{ type : Number},    
-    idproducto  :{ type : Number},
+    
+    
+    codigo  :{ type : String},
+    descripcion : { type : String},    
     cantidd : { type : Number},
-    valorunidad :{ type : Number},
-    costounidad :{ type : Number},
-    porcentajedcto : { type : Number},
-    porcentajeiva :{ type : Number},
+    precio :{ type : Number},
+    dcto : { type : Number},
+    iva :{ type : Number},
+    subtotal : { type : Number},
+    iddocenc : { type : String},
     estado: {
         type: Boolean,
         default: true
-    },
-    subtotal : { type : Number},
-    
+    }
 
 });
 const docdet = mongoose.model('Documentos_Det', docdetSchema);

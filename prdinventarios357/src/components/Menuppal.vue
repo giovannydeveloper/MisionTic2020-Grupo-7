@@ -2,8 +2,8 @@ const newLocal='Menuppal'
 <template>
   <div id="nav">
      
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+    <b-nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <b-div class="container-fluid">
         <a class="navbar-brand" href="#">SIG735</a>
         <button
           class="navbar-toggler"
@@ -19,28 +19,49 @@ const newLocal='Menuppal'
 
         <div class="collapse navbar-collapse" id="navbarToggler42">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-             <a class="nav-link active" href="#">
-                    <router-link  to="/Inicio" class="nav-item nav-link">
+           
+            <b-li class="nav-item">
+             <b-a class="nav-link active" href="#">
+                    <router-link  to="/" class="nav-item nav-link">
              
                Inicio
             
                 </router-link>
 
-              </a>
-            </li>
+              </b-a>
+            </b-li>
+            <b-li>
+              <span v-if="isLoggedIn">
+                      <a @click="logout">Logout</a>
+              </span>
+               <span v-else>
+                    <router-link to="/Login">Ingreso</router-link>
+              </span>
+            </b-li>
+            <!--
             <li class="nav-item">
-              <a class="nav-link active" href="#">
-                    <router-link  to="/Usuarios" class="nav-item nav-link">
+             <a class="nav-link active" href="#">
+                    <router-link  to="/Inicio" class="nav-item nav-link">
              
-               Usuarios
+               Login
             
                 </router-link>
 
               </a>
             </li>
+           -->
+            <b-li class="nav-item">
+              <a class="nav-link active" href="#">
+                    <router-link  to="/Usuarios" class="nav-item nav-link">
+             
+               Usuarios
             
-            <li class="nav-item">
+                    </router-link>
+
+              </a>
+            </b-li>
+            
+            <b-li class="nav-item">
                  <a class="nav-link active" href="#">
                     <router-link  to="/Categorias" class="nav-item nav-link">
              
@@ -48,9 +69,9 @@ const newLocal='Menuppal'
             
                 </router-link>
                 </a>
-                </li> 
+                </b-li> 
             
-            <li class="nav-item">
+            <b-li class="nav-item">
               <a class="nav-link active" href="#">
                     <router-link  to="/Productos" class="nav-item nav-link">
              
@@ -58,26 +79,35 @@ const newLocal='Menuppal'
             
                 </router-link>
                 </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Compras</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Ventas</a>
-            </li>
-
-            <li class="nav-item">
-            <a class="nav-link active" href="#">
-                    <router-link  to="/Carrito" class="nav-item nav-link">
+            </b-li>
+          
+              <b-li class="nav-item">
+              <a class="nav-link active" href="#">
+                    <router-link  to="/Tercero" class="nav-item nav-link">
              
-               Carrito
+               Tercero
             
                 </router-link>
                 </a>
-            </li>
+            </b-li>
+              <a class="nav-link active" href="#">
+                    <router-link  to="/Ventas" class="nav-item nav-link">
+             
+               Documentos
+            
+                </router-link>
+                </a>
+            <b-li class="nav-item">
+            <a class="nav-link active" href="#">
+                    <router-link  to="/Carrito" class="nav-item nav-link">
+             
+               ...
+            
+                </router-link>
+                </a>
+            </b-li>
 
-          <form class="d-flex">
+          <b-form class="d-flex">
             <input
               class="form-control me-2"
               type="search"
@@ -96,7 +126,7 @@ const newLocal='Menuppal'
             </li>
           </ul>
 
-          <form class="d-flex">
+          <b-form class="d-flex">
             <input
               class="form-control me-2"
               type="search"
@@ -106,20 +136,37 @@ const newLocal='Menuppal'
             <button class="btn btn-outline-success" type="submit">              
               Buscar
             </button>
-          </form>
+          </b-form>
         </div>
-      </div>
-    </nav>
+      </b-div>
+    </b-nav>
       
   </div>
  
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "Menuppal",
   props: {
     msg: String,
   },
+  computed : {
+      isLoggedIn : function(){ return this.$store.getters.isAuthenticated}
+    },
+    methods: {
+
+      ...mapActions(["LogOut"]),
+      async logout (){
+          await this.$store.commit('LogOut')
+       // await this.$store.dispatch('LogOut')
+        this.$router.push('/Login')
+      }
+       
+    
+  
+    },
+    
 };
 </script > 
 <style scoped>

@@ -4,15 +4,16 @@ const  mongoose = require('mongoose');
 const Schema =mongoose.Schema;
 const docencaSchema = new Schema({
     
-    idtipo :{ type : Number},
-    idbodega :{ type : Number},    
-    idtercero :{ type : Number},
+    idtipo :{ type : String},
+    idbodega :{ type : String},    
+    idtercero :{ type : String},
+    numero: {type: Number},
     fecha: {
         type: Date,
         require: true
     },
     
-    condicionpago : { type : Number},
+    condicionpago : { type : String},
     docproveedor : String,
     notas :String,
     estado: {

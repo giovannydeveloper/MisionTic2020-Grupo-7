@@ -6,16 +6,21 @@ const Documentos_Det = require('../models/documentosdet');
 // Crear
 router.post ('/Documentos_Det-nuevo', async (req, res ) =>{
      const body = req.body;
+   
      try {
          const docdetadb = await  Documentos_Det.create(body);
          res.status(200).json(docdetadb);
      } catch (err) {
-         return res.status(500).json(
+        console.log(err.message)
+        return res.status(500).json(
              {
                  mensaje : err.message || 'No fue posible actualizar',
                  err
+                 
              }
+             
          )
+         
          
      }
 

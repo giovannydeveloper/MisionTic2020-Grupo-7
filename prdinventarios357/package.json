@@ -5,23 +5,40 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "devbabel": "nodemon main.js --exec babel-node",
+    "start": "node index.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
+    "@heroku/buildpack-registry": "^1.0.1",
     "@smartweb/vue-flash-message": "^0.6.10",
+    "async-file": "^2.0.2",
     "axios": "^0.21.4",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
+    "cli-ux": "^5.6.3",
     "core-js": "^3.6.5",
+    "dependencies": "^0.0.1",
+    "form-data": "^2.3.3",
+    "got": "^11.8.2",
+    "moment": "^2.29.1",
     "mutationobserver-shim": "^0.3.7",
     "node-sass": "^6.0.1",
+    "phoenix": "^1.6.0",
     "popper.js": "^1.16.1",
     "portal-vue": "^2.1.7",
     "vue": "^2.6.11",
-    "vue-axios": "^3.3.7"
+    "vue-axios": "^3.3.7",
+    "vue-date-pick": "^1.4.1",
+    "vuex": "^3.6.2",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",

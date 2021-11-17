@@ -34,7 +34,7 @@ router.get('/Bodegas/:id', async(req, res) => {
     })
     }
 });
-// Get con todos los documentos
+// Get con todos la bodegas
 router.get('/Bodegas', async (req, res) => {
     try {
         const bodegadb = await Bodegas.find();
@@ -48,7 +48,7 @@ router.get('/Bodegas', async (req, res) => {
 });
    
 
-   // Delete eliminar una nota
+   // Delete eliminar una bodegas
    router.delete('/Bodegas/:id', async (req, res) => {
        const _id = req.params.id;
        try {

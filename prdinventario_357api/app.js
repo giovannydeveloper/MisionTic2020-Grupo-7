@@ -12,10 +12,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //app.use(methOverrides('_method'));
 
+
 //app.use(express.static(path.join(__dirname, 'public')));
+
 // Rutas
+
 app.use('/api', require('./src/routes/usuario'));
 app.use('/api', require('./src/routes/categorias'));
+app.use('/api', require('./src/routes/productos'));
+app.use('/api', require('./src/routes/terceros'));
+app.use('/api', require('./src/routes/documentosenca'));
+app.use('/api', require('./src/routes/documentosdet'));
+app.use('/api', require('./src/routes/bodegas'));
+app.use('/api', require('./src/routes/tiposdocumentos'));
+
+
+
+
+
+
 
 
 // Conexión base de datos
@@ -38,5 +53,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('puerto', process.env.PORT || 4000);
 app.listen(app.get('puerto'), function () {
- console.log('Example app listening on port'+ app.get('puerto'));
+ console.log(' app puerto '+ app.get('puerto'));
 }); 

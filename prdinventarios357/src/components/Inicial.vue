@@ -1,8 +1,8 @@
 const newLocal='Inicial'
 <template>
-    <div class="container">
-
-    </div>
+<div class="home">
+        <h1>Bienvenidos</h1>
+  </div>
  
 
 </template>

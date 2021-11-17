@@ -23,10 +23,10 @@ router.post ('/Categorias-nuevo', async (req, res ) =>{
 });
 
 // Get con parámetros
-router.get('/Categorias/:id', async(req, res) => {
-    const _id = req.params.id;
+router.get('/Categorias/:codigo', async(req, res) => {
+    const codigo = req.params.codigo;
     try {
-    const categoriadb = await Categorias.findOne({_id});
+    const categoriadb = await Categorias.findOne({codigo});
     res.json(categoriadb);
     } catch (err) {
     return res.status(400).json({
@@ -71,8 +71,8 @@ router.get('/Categorias', async (req, res) => {
        }
    });
    // Put actualizar una nota
-   router.put('/Categorias/:id', async (req, res) => {
-       const _id = req.params.id;
+   router.put('/Categorias-actualizar', async (req, res) => {
+    const _id = req.body.id;
        const body = req.body;
        try {
            const categoriadb = await Categorias.findByIdAndUpdate(
